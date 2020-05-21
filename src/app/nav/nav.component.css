@@ -1,0 +1,27 @@
+* {
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+
+.form-container {
+    margin-right: 2%;
+}
+
+.navbar-brand {
+    color: lightcoral;
+    font-size: 3rem;
+    margin: 0 2%;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    margin-left: 10%;
+}
+.nav-item {
+    margin: 0 30px;
+}
+
