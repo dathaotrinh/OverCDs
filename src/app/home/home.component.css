@@ -1,0 +1,52 @@
+.rectangle-container1 {
+    position: relative;
+    height: 600px;
+    background-color: #FAEEE7;
+    width : 100%;
+}
+
+img {
+    position: absolute;
+    width: 40vw;
+    height: 30vw;
+    margin-top: 8%;
+    margin-left:10%;
+}
+
+.paragraph1 {
+    font-size: larger;
+    position: absolute;
+    width: 20vw;
+    height: 10vw;
+    text-align: center;
+    margin-left: 65%;
+    margin-top: 13%;
+    font-style: italic;
+}
+
+.citation {
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 25%;
+    background-color: white;
+    padding: 10px 25px;
+}
+
+.fa-sort-down {
+    position: absolute;
+    margin-left: 75%;
+    margin-top: 33%;
+    font-size: 30px;
+    color: #ff8ba7;
+}
+.rectangle-container2 {
+    height: 600px;
+    width : 100%;
+}
+
+
+.rectangle-container3 {
+    height: 600px;
+    background-color: #FAEEE7;
+    width : 100%;
+}
