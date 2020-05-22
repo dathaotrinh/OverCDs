@@ -8,31 +8,41 @@
 
 <div class="rectangle-container1">
     <img class="img1 img-thumbnail" src="assets/images/frontpage-vinyl1.jpg">
-    <p class="paragraph1">“It was so exciting to go to the record <strong>shop</strong> and <strong>buy</strong> a piece of vinyl and hold it, read the liner notes, look at the pictures. Even the smell of <strong>the vinyl</strong>.”
+    <p class="paragraph1">“It was so exciting to go to the record <strong>shop</strong> and <strong>buy</strong> a piece
+        of vinyl and hold it, read the liner notes, look at the pictures. Even the smell of <strong>the vinyl</strong>.”
     </p>
 
     <p class="citation1">Martin Gore</p>
-    <i class="arrow1 fas fa-sort-down"></i>
+    <i class="arrow1 fas fa-sort-down"
+        (click)="secondElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
 </div>
 
 <div class="rectangle-container2">
-    <img class="img2 img-thumbnail" src="assets/images/frontpage-vinyl2.jpg">
-    <div class="paragraph-container2">
-        <p class="paragraph2">“I remember opening up my first vinyl and seeing <strong>the incredible artwork</strong> it had. There’s nothing like it. You also get that true gritty sound on vinyl that really makes a rock record sound great, which CDs can never achieve.”
-        </p>
-    
-        <p class="citation2">Nikki Sixx</p>
-        <i class="arrow2 fas fa-sort-down"></i>
-     </div>   
+    <span #secondElement>
+        <img class="img2 img-thumbnail" src="assets/images/frontpage-vinyl2.jpg">
+        <div class="paragraph-container2">
+            <p class="paragraph2">“I remember opening up my first vinyl and seeing <strong>the incredible
+                    artwork</strong> it had. There’s nothing like it. You also get that true gritty sound on vinyl that
+                really makes a rock record sound great, which CDs can never achieve.”
+            </p>
+
+            <p class="citation2">Nikki Sixx</p>
+            <i class="arrow2 fas fa-sort-down" (click)="thirdElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
+        </div>
+    </span>
 </div>
 
 <div class="rectangle-container3">
-    <img class="img3 img-thumbnail" src="assets/images/frontpage-vinyl3.jpg">
-    <div class="paragraph-container3">
-        <p class="paragraph3">“I’m a big vinyl listener, I’m a big audiophile. I have a really nice stereo set up at home with a hi-fi and really nice turntable and it’s a big deal to me to <strong>listen to music in it’s purest form</strong> like that.”
-        </p>
-    
-        <p class="citation3">Butch Walker</p>
-        <i class="key3 fas fa-key"></i>
-     </div>   
+    <span #thirdElement>
+        <img class="img3 img-thumbnail" src="assets/images/frontpage-vinyl3.jpg">
+        <div class="paragraph-container3">
+            <p class="paragraph3">“I’m a big vinyl listener, I’m a big audiophile. I have a really nice stereo set up at
+                home with a hi-fi and really nice turntable and it’s a big deal to me to <strong>listen to music in it’s
+                    purest form</strong> like that.”
+            </p>
+
+            <p class="citation3">Butch Walker</p>
+            <i class="key3 fas fa-key"></i>
+        </div>
+    </span>
 </div>
