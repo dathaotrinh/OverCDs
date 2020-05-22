@@ -1,3 +1,4 @@
+/* first rectangle */
 .rectangle-container1 {
     position: relative;
     height: 600px;
@@ -5,7 +6,7 @@
     width : 100%;
 }
 
-img {
+.img1 {
     position: absolute;
     width: 40vw;
     height: 30vw;
@@ -24,7 +25,7 @@ img {
     font-style: italic;
 }
 
-.citation {
+.citation1 {
     position: absolute;
     margin-left: 75%;
     margin-top: 25%;
@@ -32,18 +33,67 @@ img {
     padding: 10px 25px;
 }
 
-.fa-sort-down {
+.arrow1 {
     position: absolute;
     margin-left: 75%;
     margin-top: 33%;
     font-size: 30px;
     color: #ff8ba7;
+    cursor: pointer;
 }
+
+/* second rectangle */
+
 .rectangle-container2 {
+    position: relative;
     height: 600px;
     width : 100%;
 }
 
+.img2 {
+    border-radius: 10px;
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 5%;
+    margin-left:60%;
+}
+
+.paragraph-container2 {
+    position: absolute;
+    width: 45vw;
+    height: 30vw;
+    margin-top: 5%;
+    margin-left:10%;
+    background-color: #FAEEE7;
+}
+.paragraph2 {
+    font-size: larger;
+    position: absolute;
+    width: 35vw;
+    height: 10vw;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 15%;
+    font-style: italic;
+}
+
+.citation2 {
+    position: absolute;
+    margin-left: 66%;
+    margin-top: 38%;
+    background-color: white;
+    padding: 10px 25px;
+}
+
+.arrow2 {
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 50%;
+    font-size: 30px;
+    color: #ff8ba7;
+    cursor: pointer;
+}
 
 .rectangle-container3 {
     height: 600px;
