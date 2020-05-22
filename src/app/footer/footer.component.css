@@ -1,0 +1,17 @@
+.info-container {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: pink;
+}
+
+/* p {
+    text-decoration: none;
+} */
