@@ -1,6 +1,11 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Album } from './album';
+import { Observable } from 'rxjs';
+import { AlbumInterface } from './album.interface';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,11 +17,24 @@ export class HomeService implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get(this.url)
+
+  }
+
+  getAlbumList() : Observable<AlbumInterface[]>{
+    return this.http.get<AlbumInterface>(this.url)
       .pipe(
         map(res => res['albums']),
-        map(res => res['album'])
-      )
-      .subscribe(res => console.log(res));
+        map(res => res['album']),
+        map(res => {
+          return res.map(data => {
+            return {
+              name: data.name,
+              artist: data.artist,
+              image: data.image[2]['#text'],
+              price: 13.99              
+            }
+          })
+        })
+      )    
   }
 }
