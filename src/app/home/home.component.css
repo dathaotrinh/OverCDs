@@ -1,3 +1,7 @@
+p {
+    color: #594a4e;    
+}
+
 /* first rectangle */
 .rectangle-container1 {
     position: relative;
@@ -95,8 +99,55 @@
     cursor: pointer;
 }
 
+/* third rectangle */
+
 .rectangle-container3 {
     height: 600px;
     background-color: #FAEEE7;
     width : 100%;
+}
+
+.img3 {
+    border-radius: 10px;
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 5%;
+    margin-left:10%;
+}
+
+.paragraph-container3 {
+    position: absolute;
+    width: 45vw;
+    height: 30vw;
+    margin-top: 5%;
+    margin-left:50%;
+    background-color: #FAEEE7;
+}
+.paragraph3 {
+    font-size: larger;
+    position: absolute;
+    width: 33vw;
+    height: 10vw;
+    text-align: right;
+    margin-left: 15%;
+    margin-top: 15%;
+    font-style: italic;
+}
+
+.citation3 {
+    position: absolute;
+    margin-left: 66%;
+    margin-top: 38%;
+    background-color: white;
+    padding: 10px 25px;
+}
+
+.key3 {
+    position: absolute;
+    margin-left: 48%;
+    margin-top: 55%;
+    font-size: 30px;
+    color: #ff8ba7;
+    cursor: pointer;
 }
