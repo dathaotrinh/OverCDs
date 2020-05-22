@@ -14,7 +14,11 @@ export class HomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-
+    this.homeService.getAlbumList()
+      .subscribe(res => {
+        console.log(res);
+        this.albums = res;
+    })
   }
 
 }
