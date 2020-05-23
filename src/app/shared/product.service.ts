@@ -1,25 +1,25 @@
 import { Injectable, OnInit } from '@angular/core';
+import { AlbumInterface } from './album.interface';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Album } from './album';
-import { Observable } from 'rxjs';
-import { AlbumInterface } from './album.interface';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService implements OnInit {
+export class ProductService implements OnInit {
 
   private apiKey = "143579767c21ff50b45aea9f80b8c1a2";
   private url = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&api_key=" + this.apiKey + "&format=json";
 
   constructor(private http: HttpClient) { }
 
+
   ngOnInit(): void {
 
   }
 
+  
   getAlbumList() : Observable<AlbumInterface[]>{
     return this.http.get<AlbumInterface>(this.url)
       .pipe(
