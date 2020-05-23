@@ -7,42 +7,105 @@
 </div> -->
 
 <div class="rectangle-container1">
-    <img class="img1 img-thumbnail" src="assets/images/frontpage-vinyl1.jpg">
-    <p class="paragraph1">“It was so exciting to go to the record <strong>shop</strong> and <strong>buy</strong> a piece
-        of vinyl and hold it, read the liner notes, look at the pictures. Even the smell of <strong>the vinyl</strong>.”
-    </p>
 
-    <p class="citation1">Martin Gore</p>
-    <i class="arrow1 fas fa-sort-down"
-        (click)="secondElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-sm-6">
+                <img class="img1 img-thumbnail" src="assets/images/frontpage-vinyl1.jpg">
+            </div>
+            <div class="col sm-2"></div>
+            <div class="col-sm-4 pt-5 text-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="paragraph1 my-5 font-italic">“It was so exciting to go to the record <strong>shop</strong> and
+                            <strong>buy</strong> a piece
+                            of vinyl and hold it, read the liner notes, look at the pictures. Even the smell of
+                            <strong>the
+                                vinyl</strong>.”
+                        </p>
+                    </div>
+                    <div class="col-sm-12">
+                        <span class="citation1 py-2 px-4 bg-white">Martin Gore</span>
+                    </div>
+                    <div class="col-sm-12 mt-5">
+                        <i class="arrow1 fas fa-sort-down"
+                            (click)="secondElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <div class="rectangle-container2">
     <span #secondElement>
-        <img class="img2 img-thumbnail" src="assets/images/frontpage-vinyl2.jpg">
-        <div class="paragraph-container2">
-            <p class="paragraph2">“I remember opening up my first vinyl and seeing <strong>the incredible
-                    artwork</strong> it had. There’s nothing like it. You also get that true gritty sound on vinyl that
-                really makes a rock record sound great, which CDs can never achieve.”
-            </p>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-sm-7 text-center">
+                    <div class="paragraph-container2 pt-5">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p class="paragraph2 text-left my-5 mx-5 font-italic">“I remember opening up my first vinyl and seeing <strong>the
+                                        incredible
+                                        artwork</strong> it had. There’s nothing like it. You also get that true gritty
+                                    sound on
+                                    vinyl that
+                                    really makes a rock record sound great, which CDs can never achieve.”
+                                </p>
+                            </div>
+                            <div class="col-sm-12">
+                                <span class="citation2 bg-white py-2 px-4">Nikki Sixx</span>
+                            </div>
+                            <div class="col-sm-12 my-5">
+                                <i class="arrow2 fas fa-sort-down"
+                                (click)="thirdElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <p class="citation2">Nikki Sixx</p>
-            <i class="arrow2 fas fa-sort-down" (click)="thirdElement.scrollIntoView({ behavior: 'smooth', block: 'start' })"></i>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4">
+                    <img class="img2 img-thumbnail" src="assets/images/frontpage-vinyl2.jpg">
+                </div>
+
+            </div>
         </div>
+
     </span>
 </div>
 
 <div class="rectangle-container3">
     <span #thirdElement>
-        <img class="img3 img-thumbnail" src="assets/images/frontpage-vinyl3.jpg">
-        <div class="paragraph-container3">
-            <p class="paragraph3">“I’m a big vinyl listener, I’m a big audiophile. I have a really nice stereo set up at
-                home with a hi-fi and really nice turntable and it’s a big deal to me to <strong>listen to music in it’s
-                    purest form</strong> like that.”
-            </p>
-
-            <p class="citation3">Butch Walker</p>
-            <i class="key3 fas fa-key"></i>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-sm-5">
+                    <img class="img3 img-thumbnail" src="assets/images/frontpage-vinyl3.jpg">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-6 text-center">
+                    <div class="paragraph-container3">
+                        <div class="row">
+                            <div class="col-sm-12 mt-5">
+                                <p class="paragraph3 py-5 px-5 font-italic">“I’m a big vinyl listener, I’m a big audiophile. I have a really nice
+                                    stereo set up at
+                                    home with a hi-fi and really nice turntable and it’s a big deal to me to <strong>listen to
+                                        music in it’s
+                                        purest form</strong> like that.”
+                                </p>
+                            </div>
+                            <div class="col-sm-12 mb-3">
+                                <span class="citation3 px-4 py-2 bg-white">Butch Walker</span>
+                            </div>
+                            <div class="col-sm-12 mt-5">
+                                <i class="key3 fas fa-key"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </span>
 </div>

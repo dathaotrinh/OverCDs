@@ -1,153 +1,39 @@
-p {
-    color: #594a4e;    
-}
-
-/* first rectangle */
 .rectangle-container1 {
-    position: relative;
-    height: 600px;
     background-color: #FAEEE7;
-    width : 100%;
 }
 
-.img1 {
-    position: absolute;
-    width: 40vw;
-    height: 30vw;
-    margin-top: 8%;
-    margin-left:10%;
-}
 
-.paragraph1 {
-    font-size: larger;
-    position: absolute;
-    width: 20vw;
-    height: 10vw;
-    text-align: center;
-    margin-left: 65%;
-    margin-top: 13%;
-    font-style: italic;
-}
-
-.citation1 {
-    position: absolute;
-    margin-left: 75%;
-    margin-top: 25%;
-    background-color: white;
-    padding: 10px 25px;
-}
-
-.arrow1 {
-    position: absolute;
-    margin-left: 75%;
-    margin-top: 33%;
-    font-size: 30px;
-    color: #ff8ba7;
-    cursor: pointer;
-}
-
-/* second rectangle */
-
-.rectangle-container2 {
-    position: relative;
-    height: 600px;
-    width : 100%;
-}
-
-.img2 {
-    border-radius: 10px;
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    margin-top: 5%;
-    margin-left:60%;
+img {
+    width: 100%;
+    height: 100%;
 }
 
 .paragraph-container2 {
-    position: absolute;
-    width: 45vw;
-    height: 30vw;
-    margin-top: 5%;
-    margin-left:10%;
     background-color: #FAEEE7;
+    height: 100%;
 }
-.paragraph2 {
-    font-size: larger;
-    position: absolute;
-    width: 35vw;
-    height: 10vw;
-    text-align: left;
-    margin-left: 10%;
-    margin-top: 15%;
-    font-style: italic;
-}
-
-.citation2 {
-    position: absolute;
-    margin-left: 66%;
-    margin-top: 38%;
-    background-color: white;
-    padding: 10px 25px;
-}
-
-.arrow2 {
-    position: absolute;
-    margin-left: 48%;
-    margin-top: 50%;
-    font-size: 30px;
-    color: #ff8ba7;
-    cursor: pointer;
-}
-
-/* third rectangle */
 
 .rectangle-container3 {
-    height: 600px;
-    background-color: #FAEEE7;
-    width : 100%;
-}
-
-.img3 {
-    border-radius: 10px;
-    position: absolute;
-    width: 30vw;
-    height: 30vw;
-    margin-top: 5%;
-    margin-left:10%;
-}
-
-.paragraph-container3 {
-    position: absolute;
-    width: 45vw;
-    height: 30vw;
-    margin-top: 5%;
-    margin-left:50%;
     background-color: #FAEEE7;
 }
-.paragraph3 {
-    font-size: larger;
-    position: absolute;
-    width: 33vw;
-    height: 10vw;
-    text-align: right;
-    margin-left: 15%;
-    margin-top: 15%;
-    font-style: italic;
-}
 
-.citation3 {
-    position: absolute;
-    margin-left: 66%;
-    margin-top: 38%;
-    background-color: white;
-    padding: 10px 25px;
-}
-
-.key3 {
-    position: absolute;
-    margin-left: 48%;
-    margin-top: 55%;
+.arrow2, .arrow1 {
     font-size: 30px;
     color: #ff8ba7;
     cursor: pointer;
+}
+
+
+.key3 {
+    font-size: 20px;
+    color: #ff8ba7;
+    cursor: pointer;
+}
+
+p, span {
+    color: #594a4e;    
+}
+
+p {
+    font-size: larger;
 }
