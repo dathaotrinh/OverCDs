@@ -1,1 +1,17 @@
-<p>product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-4">
+
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 text-center"  *ngFor="let album of albums">
+                    <img class="img-thumbnail mb-3" src="{{album.image}}">
+                    <h4>{{album.name}}</h4>
+                    <!-- <p>{{album.artist.name}}</p> -->
+                    <p>{{album.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
