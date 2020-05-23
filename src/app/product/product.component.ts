@@ -10,10 +10,10 @@ import { Album } from '../shared/album';
 export class ProductComponent implements OnInit {
   albums: Album[] = [];
 
-  constructor(private homeService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.homeService.getAlbumList()
+    this.productService.getAlbumList()
       .subscribe(res => {
         console.log(res);
         this.albums = res;
