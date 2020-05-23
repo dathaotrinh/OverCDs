@@ -5,11 +5,19 @@
         </div>
         <div class="col-md-9 col-sm-8">
             <div class="row">
-                <div class="col-md-4 col-sm-6 text-center"  *ngFor="let album of albums">
+                <div class="col-md-4 col-sm-6 text-center" *ngFor="let album of albums">
                     <img class="img-thumbnail mb-3" src="{{album.image}}">
-                    <h4>{{album.name}}</h4>
-                    <!-- <p>{{album.artist.name}}</p> -->
-                    <p>{{album.price}}</p>
+                    <div class="row">
+                        <div class="col-sm-12" style="height: 50px;">
+                            <span class="font-weight-bold">{{album.name}}</span>
+                        </div>
+                        <!-- <div class="col-sm-12">
+                            <p>{{album.artist.name}}</p>
+                        </div> -->
+                        <div class="col-sm-12">
+                            <p class="">{{album.price | currency: 'USD'}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
