@@ -9,6 +9,7 @@ import { CartService } from '../shared/cart.service';
 export class NavComponent implements OnInit {
 
   numberOfItems = 0;
+  inputSearch = '';
 
   constructor(private cartService: CartService) { }
 
