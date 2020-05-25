@@ -2,7 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { AlbumInterface } from './album.interface';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, distinct } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +19,23 @@ export class ProductService implements OnInit {
 
   }
 
-  
+  getArtistName() : Observable<AlbumInterface[]> {
+    return this.http.get<AlbumInterface[]>(this.url)
+      .pipe(
+        map(res => res['albums']['album']),
+        map(res => {
+          return res.map(data => {
+            return {
+              artist: data.artist.name
+            }
+          })
+        }
+      ))
+  }
   getAlbumList() : Observable<AlbumInterface[]>{
     return this.http.get<AlbumInterface>(this.url)
       .pipe(
-        map(res => res['albums']),
-        map(res => res['album']),
+        map(res => res['albums']['album']),
         map(res => {
           return res.map(data => {
             return {
