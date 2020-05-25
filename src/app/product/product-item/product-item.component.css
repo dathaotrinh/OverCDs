@@ -1,0 +1,4 @@
+#productbox:hover {
+    border: 1px solid #ff8ba7;
+    cursor: pointer;
+}

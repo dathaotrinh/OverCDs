@@ -36,13 +36,13 @@
       <!-- Side Bar -->
       <div class="col-md-3 col-sm-4">
         <h3 class="mx-5 mb-5">Hot Artist</h3>
-        <p class="mx-5" id="name" *ngFor="let album of artist">{{album}}</p>
+        <p class="mx-5" id="name" *ngFor="let artist of artists">{{artist}}</p>
         
       </div>
 
       <!-- Product List -->
       <div class="col-md-9 col-sm-8">
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-4 col-sm-6 text-center mb-3 pt-3" id="productbox" *ngFor="let album of albums">
             <img class="img-thumbnail mb-3" src="{{album.image}}">
             <div class="row">
@@ -57,8 +57,13 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+        <app-product-item [albums]='albums'></app-product-item>
+
       </div>
+
+
+
     </div>
   </div>
 </div>

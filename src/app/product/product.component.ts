@@ -8,9 +8,10 @@ import { Album } from '../shared/album';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  
   albums: Album[] = [];
-
-  artist=[];
+  artists=[];
+  
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,7 @@ export class ProductComponent implements OnInit {
       
     this.productService.getArtistName().subscribe(    
       res => {
-        this.artist =[... new Set(res.map(data => data.artist))];
+        this.artists =[... new Set(res.map(data => data.artist))];
       }
     )
   }
