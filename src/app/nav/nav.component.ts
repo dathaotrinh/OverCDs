@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../shared/cart.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  numberOfItems = 0;
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-  }
-
-  productsClicked() {
-    
+    this.cartService.cartChanged
+      .subscribe(data => {
+        this.numberOfItems = data.length
+      });
   }
 
 }

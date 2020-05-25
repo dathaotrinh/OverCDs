@@ -17,7 +17,7 @@ export class CartService {
     this.cartChanged.next(this.cartList);
   }
 
-  getCartItems(): Album[] {
+  getCartItems(): Album[] {    
     return this.cartList;
   }
 
