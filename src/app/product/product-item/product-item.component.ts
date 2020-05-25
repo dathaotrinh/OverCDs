@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Album } from 'src/app/shared/album';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-product-item',
@@ -8,10 +10,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductItemComponent implements OnInit {
 
   @Input() albums = [];
+  albumSelected: Album;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  addItemToCart(index: number): void{
+    this.cartService.addItemToCart(this.albums[index]);
   }
 
 }

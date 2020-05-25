@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-4 col-sm-6 text-center mb-3 pt-3" id="productbox" *ngFor="let album of albums">
+    <div class="col-md-4 col-sm-6 text-center mb-3 pt-3" id="productbox" *ngFor="let album of albums; let i = index">
         <img class="img-thumbnail mb-3" src="{{album.image}}">
         <div class="row">
             <div class="col-sm-12" style="height: 50px;">
@@ -9,7 +9,7 @@
                 <p>Price: {{album.price | currency: 'USD'}}</p>
             </div>
             <div class="col-sm-12">
-                <div class="btn btn-outline-danger mb-5 w-50">Add To Cart</div>
+                <div class="btn btn-outline-danger mb-5 w-50" (click)="addItemToCart(i)">Add To Cart</div>
             </div>
         </div>
     </div>
