@@ -48,7 +48,10 @@
                             <p>{{album.artist.name}}</p>
                         </div> -->
                         <div class="col-sm-12">
-                            <p class="">{{album.price | currency: 'USD'}}</p>
+                          <p>Price: {{album.price | currency: 'USD'}}</p>
+                        </div>
+                        <div class="col-sm-12">
+                          <div class="btn btn-outline-danger mb-5 w-25">Add To Cart</div>
                         </div>
                     </div>
                 </div>
