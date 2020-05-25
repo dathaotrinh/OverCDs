@@ -1,0 +1,5 @@
+#name:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #ff8ba7;
+}
