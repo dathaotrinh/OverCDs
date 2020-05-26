@@ -24,9 +24,10 @@
         <div class="form-container">
 
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search" style='border-top: none; border-left: none; border-right: none;'>
+                <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search" style='border-top: none; border-left: none; border-right: none;' #searchInput>
+                <!-- <p>{{searchInput}}</p> -->
                 <!-- <button class="btn btn-outline-danger my-2 my-sm-4" type="submit">Search</button> -->
-                <i class="fas fa-search" style='font-size: 20px;'></i>
+                <i class="fas fa-search" style='font-size: 20px; cursor: pointer;' (click)='setInput(searchInput.value)' ></i>
             </form>
 
         </div>

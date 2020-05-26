@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   albums: Album[] = [];
   artists=[];
   
+  
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
