@@ -20,8 +20,9 @@ export class ProductItemComponent implements OnInit {
     this.getSearchInput();
   }
 
-  addItemToCart(index: number): void{
-    this.cartService.addItemToCart(this.albums[index]);
+  addItemToCart(id: string): void{
+    const item = this.albums.find(ele => ele.id === id);
+    this.cartService.addItemToCart(item);
   }
 
   
