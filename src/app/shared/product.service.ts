@@ -2,7 +2,8 @@ import { Injectable, OnInit } from '@angular/core';
 import { AlbumInterface } from './album.interface';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, distinct } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { v4 as uuid } from 'uuid';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,7 @@ export class ProductService implements OnInit {
         map(res => {
           return res.map(data => {
             return {
+              id: uuid(),
               name: data.name,
               artist: data.artist,
               image: data.image[2]['#text'],

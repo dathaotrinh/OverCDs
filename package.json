@@ -27,6 +27,7 @@
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "@types/uuid": "^8.0.0",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
     "ng2-search-filter": "^0.5.1",
