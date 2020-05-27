@@ -9,10 +9,13 @@ import { Album } from 'src/app/shared/album';
 })
 export class ProductListComponent implements OnInit {
   albums: Album[] = [];
+  artists= [];
+
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAlbumList();
+    this.getArtistList();
   }
 
   getAlbumList() {
@@ -22,4 +25,12 @@ export class ProductListComponent implements OnInit {
       this.albums = res;
     })
   }
+
+  getArtistList() {
+    this.productService.getArtistName()
+    .subscribe(res => {
+      this.artists =[... new Set(res.map(data => data.artist))];
+    })
+  }
+
 }

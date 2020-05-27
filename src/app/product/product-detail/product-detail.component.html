@@ -1,11 +1,5 @@
-<p >{{album['name']}}</p>
-<p >{{album['artist']}}</p>
 
-<!-- <img class="img-responsive" src="{{product.imageUrl}}"> -->
+<img class="img-responsive" src="{{album['image']}}">
 
-<ul class="list-group-horizontal">
-    <li class="list-group-item"><strong>Name</strong> : {{album['name']}}</li>
-
-    <li class="list-group-item"><strong>Artist</strong> : {{album['artist']}}</li>
-    <li class="list-group-item"><strong>Price</strong> : {{13.99 | currency : 'USD'}}</li>
-</ul>
+<h1>{{album['artist']}} - {{album['name']}}</h1>
+<p>Listeners: {{album['listeners']}}</p>

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../shared/product.service';
-// import { Album } from '../shared/album';
 
 @Component({
   selector: 'app-product',
@@ -9,20 +7,12 @@ import { ProductService } from '../shared/product.service';
 })
 export class ProductComponent implements OnInit {
   
-  artists= [];
   
-  constructor(private productService: ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getArtistList();
   }
 
   
-  getArtistList() {
-    this.productService.getArtistName()
-    .subscribe(res => {
-      this.artists =[... new Set(res.map(data => data.artist))];
-    })
-  }
 
 }

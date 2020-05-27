@@ -64,7 +64,7 @@ export class ProductService implements OnInit {
               map(data => {
                 return {
                   artist: data.artist,
-                  image: data.image[2]['#text'],
+                  image: data.image[5]['#text'],
                   listeners: data.listeners,
                   name: data.name,
                   playcount: data.playcount,
