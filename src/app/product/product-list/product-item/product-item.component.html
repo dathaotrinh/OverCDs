@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-md-4 col-sm-6 text-center mb-3 pt-3" id="productbox" *ngFor="let album of albums| filter:searchInput;" [routerLink]="album.id">
-        <img class="img-thumbnail mb-3" src="{{album.image}}">
+    <div class="col-md-4 col-sm-6 text-center mb-3 pt-3" id="productbox" *ngFor="let album of albums| filter:searchInput;" >
+        <img [routerLink]="album.id" class="img-thumbnail mb-3" src="{{album.image}}">
         <div class="row">
-            <div class="col-sm-12" style="height: 50px;">
+            <div [routerLink]="album.id" class="col-sm-12" style="height: 50px;">
                 <span class="font-weight-bold">{{album.name}}</span>
             </div>
             <div class="col-sm-12">
