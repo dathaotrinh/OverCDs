@@ -25,8 +25,6 @@ export class ProductItemComponent implements OnInit {
     this.cartService.addItemToCart(item);
   }
 
-  
-
   getSearchInput() {
     this.navService.inputSearchChanged.subscribe(res => {
       this.searchInput = res;
