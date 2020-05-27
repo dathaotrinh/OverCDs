@@ -1,9 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
 import { AlbumInterface } from './album.interface';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { v4 as uuid } from 'uuid';
+import { Album } from './album';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,15 @@ export class ProductService implements OnInit {
   private apiKey = "143579767c21ff50b45aea9f80b8c1a2";
   private url = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&api_key=" + this.apiKey + "&format=json";
 
+  albumSelected= new Subject<Album>();
   constructor(private http: HttpClient) { }
 
 
   ngOnInit(): void {
 
   }
+
+  
 
   getArtistName() : Observable<AlbumInterface[]> {
     return this.http.get<AlbumInterface[]>(this.url)
