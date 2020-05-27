@@ -4,4 +4,8 @@ export interface AlbumInterface {
     artist: {};
     image: [];
     price: number;
+    listeners?: number;
+    playcount?: number;
+    tracks?: {};
+    wiki?: {};
 }

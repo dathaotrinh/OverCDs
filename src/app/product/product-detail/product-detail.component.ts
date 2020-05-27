@@ -10,29 +10,18 @@ import { Album } from 'src/app/shared/album';
 })
 export class ProductDetailComponent implements OnInit {
 
-  albums: Album[] = [];
   album: Album;
+  id: string;
   constructor(private route: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.albumSelected.subscribe(res => {
-      console.log(res.name);
-      this.album = res;
-    });
-
     this.route.params
       .subscribe(
         (params: Params) => {
-          console.log(params['id']);
+          this.id = params['id'];
         }
       )
   }
 
-  getAlbumByName() {
-    this.productService.getAlbumList()
-      .subscribe(res => {
-        this.albums = res;
-        this.album = this.albums.find(data => {})
-      });
-  }
+
 }

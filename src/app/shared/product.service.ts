@@ -14,15 +14,13 @@ export class ProductService implements OnInit {
   private apiKey = "143579767c21ff50b45aea9f80b8c1a2";
   private url = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&api_key=" + this.apiKey + "&format=json";
 
+
   albumSelected= new Subject<Album>();
   constructor(private http: HttpClient) { }
 
 
   ngOnInit(): void {
-
   }
-
-  
 
   getArtistName() : Observable<AlbumInterface[]> {
     return this.http.get<AlbumInterface[]>(this.url)
@@ -54,5 +52,11 @@ export class ProductService implements OnInit {
           })
         })
       )    
+  }
+
+
+  getProduct(artist: string, album: string): Observable<Album> {
+    const albumUrl = "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + this.apiKey + "&artist=" + artist + "&album=" + album + "&format=json"
+    return this.http.get<AlbumInterface>(albumUrl);
   }
 }
