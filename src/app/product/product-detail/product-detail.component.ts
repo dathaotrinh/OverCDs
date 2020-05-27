@@ -19,6 +19,7 @@ export class ProductDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
+          console.log(params['name'])
         }
       )
   }
