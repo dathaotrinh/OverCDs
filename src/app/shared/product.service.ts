@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { v4 as uuid } from 'uuid';
 import { Album } from './album';
+import { AlbumInfo } from './albumInfor.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +56,21 @@ export class ProductService implements OnInit {
   }
 
 
-  getProduct(artist: string, album: string): Observable<Album> {
+  getProduct(album: string, artist: string): Observable<AlbumInfo> {
     const albumUrl = "http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=" + this.apiKey + "&artist=" + artist + "&album=" + album + "&format=json"
-    return this.http.get<AlbumInterface>(albumUrl);
-  }
+    return this.http.get<AlbumInfo>(albumUrl)
+            .pipe(
+              map(res => res['album']),
+              map(data => {
+                return {
+                  artist: data.artist,
+                  image: data.image[2]['#text'],
+                  listeners: data.listeners,
+                  name: data.name,
+                  playcount: data.playcount,
+                  tracks: data.tracks,
+                  wiki: data.wiki.summary
+                }})
+              )
+      }
 }
