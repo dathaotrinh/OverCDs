@@ -1,5 +1,6 @@
 export interface AlbumInfo {
     name: string;
+    price: number;
     artist: {};
     image: [];
     listeners: number;

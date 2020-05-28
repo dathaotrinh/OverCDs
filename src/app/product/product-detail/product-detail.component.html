@@ -1,5 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-12 text-center">
+            <img class="img-responsive" src="{{album['image']}}">
+        </div>
+        <div class="col-md-5 col-xs-12">
+            <h2>{{album['artist']}} - {{album['name']}}</h2>
+            <h3 style="color: red">USD: {{album['price'] | currency: 'USD'}}</h3>
+            <span class="font-weight-bold">Listeners: </span>
+            <span>{{album['listeners']}}</span>
+            <br>
+            <span class="font-weight-bold">Playcount: </span>
+            <span>{{album['playcount']}}</span>
 
-<img class="img-responsive" src="{{album['image']}}">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="list-group">
+                    <li class="list-group-item font-weight-bold mt-5 list-group-item-light">SUMMARY</li>
+                    <li class="list-group-item mb-5 my-3" style="border: none;">{{album['wiki']}}</li>
+                </ul>
 
-<h1>{{album['artist']}} - {{album['name']}}</h1>
-<p>Listeners: {{album['listeners']}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item font-weight-bold list-group-item-light my-3">TRACK LIST</li>
+                    <li class="list-group-item" style="border: none;" *ngFor="let track of album['tracks']">
+                        {{track['name']}}</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -65,12 +65,14 @@ export class ProductService implements OnInit {
                 return {
                   artist: data.artist,
                   image: data.image[5]['#text'],
+                  price: 13.99,
                   listeners: data.listeners,
                   name: data.name,
                   playcount: data.playcount,
-                  tracks: data.tracks,
-                  wiki: data.wiki.summary
-                }})
+                  tracks: data.tracks.track,
+                  wiki: data.wiki.content
+                }}),
+
               )
       }
 }
