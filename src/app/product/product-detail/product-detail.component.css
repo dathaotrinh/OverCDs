@@ -3,9 +3,24 @@ ul {
     margin: 0;
     display: block;
     list-style-type: none
-  }
-  li {
-    display:list-item;
-    width: 100%; /* sometimes firefox gives issue*/
-    word-break: break-all; /* break word in next line, if no space*/
-  }
+}
+
+li {
+    display: list-item;
+    width: 100%;
+    word-break: break-all;
+}
+
+.inline-group {
+    max-width: 9rem;
+    padding: .5rem;
+}
+
+.inline-group .form-control {
+    text-align: center;
+}
+
+.form-control[type="number"]::-webkit-inner-spin-button, .form-control[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
