@@ -15,6 +15,8 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductItemComponent } from './product/product-list/product-item/product-item.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,14 +29,16 @@ import { AuthComponent } from './auth/auth.component';
     ProductItemComponent,
     ProductDetailComponent,
     ProductListComponent,
-    AuthComponent
+    AuthComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
