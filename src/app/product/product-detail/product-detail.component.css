@@ -1,0 +1,11 @@
+ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+    list-style-type: none
+  }
+  li {
+    display:list-item;
+    width: 100%; /* sometimes firefox gives issue*/
+    word-break: break-all; /* break word in next line, if no space*/
+  }

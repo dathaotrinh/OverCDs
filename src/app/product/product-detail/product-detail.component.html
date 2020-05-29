@@ -1,15 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-xs-12 text-center">
-            <img class="img-responsive" src="{{album['image']}}">
+            <img class="img-responsive w-100" src="{{album['image']}}">
         </div>
-        <div class="col-md-5 col-xs-12">
+        <div class="col-md-5 col-xs-12 ml-5">
             <h2>{{album['artist']}} - {{album['name']}}</h2>
             <h3 style="color: red">USD: {{album['price'] | currency: 'USD'}}</h3>
             <span class="font-weight-bold">Listeners: </span>
             <span>{{album['listeners']}}</span>
-            <br>
-            <span class="font-weight-bold">Playcount: </span>
+            <span class="font-weight-bold mt-5">Playcount: </span>
             <span>{{album['playcount']}}</span>
 
         </div>

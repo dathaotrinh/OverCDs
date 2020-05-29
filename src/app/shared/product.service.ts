@@ -70,7 +70,7 @@ export class ProductService implements OnInit {
                   name: data.name,
                   playcount: data.playcount,
                   tracks: data.tracks.track,
-                  wiki: data.wiki.content
+                  wiki: data.wiki.summary
                 }}),
 
               )
