@@ -2,28 +2,28 @@
     <h1 class="text-center">BECOME A MEMBER</h1>
     <p class="text-center">Become a Member — you'll enjoy exclusive deals, offers, invites and rewards.</p>
     <mat-dialog-content>
-        <form class="mt-4">
+        <form class="mt-4" #signupForm='ngForm' (ngSubmit)="onSubmit(signupForm)">
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
+                <input type="email" class="form-control" id="email" name="email" ng Model required>
                 <label for="password" class="mt-2">Create a password</label>
-                <input type="password" class="form-control" id="password">
+                <input type="password" class="form-control" id="password" name="password" ngModel required>
                 <label for="fname" class="mt-2">First name</label>
-                <input type="text" class="form-control" id="fname">
+                <input type="text" class="form-control" id="fname" name="firstname" ngModel>
                 <label for="lname" class="mt-2">Last name</label>
-                <input type="text" class="form-control" id="lname">
+                <input type="text" class="form-control" id="lname" name="lastname" ngModel>
                 <label for="dob" class="mt-2">Date of birth</label>
-                <input type="date" class="form-control" id="dob">
+                <input type="date" class="form-control" id="dob" name="dateofbirth" ngModel>
                 <label for="zipcode" class="mt-2">Zip code</label>
-                <input type="number" class="form-control" id="zipcode">
+                <input type="number" class="form-control" id="zipcode" minlength="5" maxlength="5" name="zipcode" ngModel>
             </div>
         </form>
         <p class="text-center mb-5">By clicking ‘Become a member’, I agree to the OverCDs Membership Terms and conditions.</p>
 
     </mat-dialog-content>
 
-    <button class="form-control btn btn-danger mt-4">BECOME A MEMBER</button>
+    <button class="form-control btn btn-danger mt-5">BECOME A MEMBER</button>
 
 
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupComponent } from '../signup/signup.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -19,4 +20,7 @@ export class LoginComponent implements OnInit {
     const dialogRef  = this.dialog.open(SignupComponent);
   }
 
+  onSubmit(form: NgForm) {
+    console.log(form.value);
+  }
 }

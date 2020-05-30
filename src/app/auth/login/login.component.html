@@ -1,12 +1,14 @@
 <div class="container">
     <h1 class="text-center">SIGN IN</h1>
     <p class="text-center">Become a Member — you'll enjoy exclusive deals, offers, invites and rewards.</p>
-    <form class="mt-4">
+    <form class="mt-4" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" id="email">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password">
+            <input type="email" class="form-control" id="email" ngModel name="email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+            <label for="password" class="mt-3">Password</label>            
+            <input type="password" class="form-control" id="password" ngModel name="password" required>
         </div>
         <div class="form-check">
             <input type="checkbox" class="form-check-input" id="checkbox">
