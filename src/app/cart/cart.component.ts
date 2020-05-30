@@ -17,7 +17,8 @@ export class CartComponent implements OnInit {
     this.getItemInCart();
   }
 
-  openDialog() {
+
+  openLogin() {
     const dialogRef  = this.dialog.open(LoginComponent);
   }
 

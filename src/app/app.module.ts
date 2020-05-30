@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductDetailComponent,
     ProductListComponent,
     AuthComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
