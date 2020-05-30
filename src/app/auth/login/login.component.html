@@ -1,8 +1,11 @@
 <div class="container">
     <h1 class="text-center">SIGN IN</h1>
     <p class="text-center">Become a Member — you'll enjoy exclusive deals, offers, invites and rewards.</p>
-    <form class="mt-4" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <form class="mt-4" #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm)">
         <div class="form-group">
+            <div class="alert alert-danger" *ngIf="errorMessage!==''" role="alert">
+                {{errorMessage}}
+            </div>
             <label for="email">Email <span style="color: red;">*</span></label>
             <input type="email" class="form-control" id="email" ngModel name="email" required>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

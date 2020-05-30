@@ -11,6 +11,8 @@ export class AuthService {
 
   private signupLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
 
+  private loginLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+
   constructor(private http: HttpClient) { }
 
   signupNewUser(email: string, password: string) {
@@ -21,8 +23,12 @@ export class AuthService {
     })
   }
 
-  // private handleError(error: HttpErrorResponse){
-  //   let errorMessage = 'An unknown error!';
-    
-  // }
+  loginUser(email: string, password: string) {
+    return this.http.post<AuthResponseData>(this.loginLink + this.apiKey, {
+      email: email,
+      password: password,
+      returnSecureToken: true
+    })
+  }
+
 }

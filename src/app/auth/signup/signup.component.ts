@@ -9,23 +9,26 @@ import { AuthService } from '../auth.service';
 })
 export class SignupComponent implements OnInit {
 
+  errorMessage: string = '';
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmitSignUp(form: NgForm) {
-    console.log(form.value);
-    if(!form.valid){
-      return;
+  onSubmitSignup(form: NgForm) {
+    console.log(form.valid);
+    if (!form.valid) {
+      this.errorMessage = 'Please fill in the required fields.';
+    } else {
+      this.authService.signupNewUser(form.value.email, form.value.password)
+        .subscribe(res => {
+          console.log(res)
+        },
+          error => {
+            this.errorMessage = error.error.error.message;
+            console.log(error.error.error.message)
+          })
     }
-    this.authService.signupNewUser(form.value.email, form.value.password)
-      .subscribe(res => {
-        console.log(res)
-      }, 
-        error => {
-          console.log(error.error.error.message)
-        }
-      )
+
   }
 }

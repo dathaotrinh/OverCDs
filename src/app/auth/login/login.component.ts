@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupComponent } from '../signup/signup.component';
 import { NgForm } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,9 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  errorMessage: string = '';
+
+  constructor(private dialog: MatDialog, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +23,19 @@ export class LoginComponent implements OnInit {
     const dialogRef  = this.dialog.open(SignupComponent);
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value);
-  }
+  onSubmitLogin(form: NgForm) {
+    console.log(form.valid);
+    if (!form.valid) {
+      this.errorMessage = 'Please fill in the required fields.';
+    } else {
+      console.log('alo')
+      this.authService.loginUser(form.value.email, form.value.password)
+        .subscribe(res => {
+          console.log(res)
+        },
+          error => {
+            this.errorMessage = error.error.error.message;
+            console.log(error.error.error.message)
+          })
+    }  }
 }
