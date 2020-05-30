@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
 import { Album } from 'src/app/shared/album';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,17 +12,17 @@ export class ProductListComponent implements OnInit {
   albums: Album[] = [];
   artists= [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.getAlbumList();
-    this.getArtistList();
+    this.getArtistList();  
   }
 
   getAlbumList() {
     this.productService.getAlbumList()
     .subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.albums = res;
     })
   }

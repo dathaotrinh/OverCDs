@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { SignupComponent } from '../signup/signup.component';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +14,17 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private dialog: MatDialog, private authService: AuthService) { }
+  constructor(private dialog: MatDialog, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
   openSignup() {
-    const dialogRef  = this.dialog.open(SignupComponent);
+    this.dialog.open(SignupComponent);
   }
+
+
 
   onSubmitLogin(form: NgForm) {
     console.log(form.valid);
@@ -30,7 +33,10 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
-          console.log(res)
+          console.log(res);
+          this.authService.isLogin.next(true);
+          this.dialog.closeAll();
+          this.router.navigate(['/cart']);
         },
           error => {
             this.errorMessage = error.error.error.message;
