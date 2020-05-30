@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Auth } from './auth';
-import { catchError , tap} from 'rxjs/operators';
+import { AuthResponseData } from './auth';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +13,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  // signupNewUser(email: string, password: string) {
-  //   this.http.post<Auth>(this.signupLink + this.apiKey, {
-  //     email: email,
-  //     password: password,
-  //     returnSecureToken: true
-  //   }).pipe(
-  //     catchError(error => this.handleError(error))
-  //   )
-  // }
+  signupNewUser(email: string, password: string) {
+    return this.http.post<AuthResponseData>(this.signupLink + this.apiKey, {
+      email: email,
+      password: password,
+      returnSecureToken: true
+    })
+  }
 
   // private handleError(error: HttpErrorResponse){
   //   let errorMessage = 'An unknown error!';
