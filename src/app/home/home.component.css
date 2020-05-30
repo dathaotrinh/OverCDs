@@ -2,6 +2,9 @@
     background-color: #FAEEE7;
 }
 
+p {
+    line-height: 2em;
+}
 
 img {
     width: 100%;

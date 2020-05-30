@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
     if (!form.valid) {
       this.errorMessage = 'Please fill in the required fields.';
     } else {
-      console.log('alo')
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
           console.log(res)
