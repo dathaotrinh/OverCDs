@@ -4,27 +4,26 @@
     <form class="mt-4" #signupForm='ngForm' (ngSubmit)="onSubmitSignUp(signupForm)">
         <mat-dialog-content>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email <span style="color: red;">*</span></label>
                 <input type="email" class="form-control" id="email" name="email" ngModel required>
-                <label for="password" class="mt-2">Create a password</label>
+                <label for="password" class="mt-2">Create a password <span style="color: red;">*</span></label>
                 <input type="password" class="form-control" id="password" name="password" ngModel required>
-                <label for="fname" class="mt-2">First name</label>
-                <input type="text" class="form-control" id="fname" name="firstname" ngModel>
-                <label for="lname" class="mt-2">Last name</label>
-                <input type="text" class="form-control" id="lname" name="lastname" ngModel>
+                <label for="fname" class="mt-2">First name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="fname" name="firstname" ngModel required>
+                <label for="lname" class="mt-2">Last name <span style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="lname" name="lastname" ngModel required>
                 <label for="dob" class="mt-2">Date of birth</label>
                 <input type="date" class="form-control" id="dob" name="dateofbirth" ngModel>
                 <label for="zipcode" class="mt-2">Zip code</label>
-                <input type="number" class="form-control" id="zipcode" minlength="5" maxlength="5" name="zipcode"
-                    ngModel>
+                <input type="number" class="form-control" id="zipcode" minlength="5" maxlength="5" name="zipcode" ngModel>
             </div>
-            <p class="text-center mb-5">By clicking ‘Become a member’, I agree to the OverCDs Membership Terms and
+            <p class="text-center">By clicking ‘Become a member’, I agree to the OverCDs Membership Terms and
                 conditions.
             </p>
+            <button class="form-control btn btn-danger mt-5">BECOME A MEMBER</button>
 
         </mat-dialog-content>
 
-        <button class="form-control btn btn-danger mt-5">BECOME A MEMBER</button>
     </form>
 
 
