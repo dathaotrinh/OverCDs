@@ -14,15 +14,17 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   onSubmitSignup(form: NgForm) {
-    console.log(form.value);
+    console.log(form);
     if (!form.valid) {
       this.errorMessage = 'Please fill in the required fields.';
     } else {
       this.authService.signupNewUser(form.value.email, form.value.password)
         .subscribe(res => {
-          console.log(res)
+          console.log(res.localId)
+          this.authService.storeUserData(form, res.localId)
+            .subscribe(res => {});
         },
           error => {
             this.errorMessage = error.error.error.message;

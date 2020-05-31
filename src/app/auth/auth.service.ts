@@ -4,6 +4,7 @@ import { AuthResponseData } from './auth';
 import { Subject } from 'rxjs';
 import { User } from './user.model';
 import { tap } from 'rxjs/operators';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class AuthService {
   private signupLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
 
   private loginLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
+
+  private link = 'https://overcds-c873e.firebaseio.com/users/';
 
   constructor(private http: HttpClient) { }
 
@@ -46,6 +49,10 @@ export class AuthService {
         this.user.next(user);
       })
     )
+  }
+
+  storeUserData(form: NgForm, id: string) {
+    return this.http.put(this.link + id + '.json', form.value);
   }
 
 }
