@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmitSignup(form: NgForm) {
-    console.log(form.valid);
+    console.log(form.value);
     if (!form.valid) {
       this.errorMessage = 'Please fill in the required fields.';
     } else {

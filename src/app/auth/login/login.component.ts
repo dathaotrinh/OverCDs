@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
 
   onSubmitLogin(form: NgForm) {
-    console.log(form.valid);
+    console.log(form);
     if (!form.valid) {
       this.errorMessage = 'Please fill in the required fields.';
     } else {

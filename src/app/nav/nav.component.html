@@ -13,16 +13,13 @@
                 <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item" *ngIf="isAuthenticated">
-                <a class="nav-link" routerLink="/myaccount"
-                routerLinkActive="active">My Account</a>
+                <a class="nav-link" routerLink="/myaccount" routerLinkActive="active">My Account</a>
             </li>
             <li class="nav-item" *ngIf="!isAuthenticated">
-                <a class="nav-link" 
-                (click)="openLogin()">Sign In</a>
+                <a class="nav-link" (click)="openLogin()">Sign In</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="/products"
-                routerLinkActive="active">Products</a>
+                <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLink="/cart" routerLinkActive="active">Cart ({{numberOfItems}})</a>
@@ -32,10 +29,10 @@
         <div class="form-container">
 
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search" style='border-top: none; border-left: none; border-right: none;' #searchInput>
-                <!-- <p>{{searchInput}}</p> -->
-                <!-- <button class="btn btn-outline-danger my-2 my-sm-4" type="submit">Search</button> -->
-                <i class="fas fa-search" style='font-size: 20px; cursor: pointer;' (click)='setInput(searchInput.value)' ></i>
+                <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    style='border-top: none; border-left: none; border-right: none;' #searchInput>
+                <i class="fas fa-search" style='font-size: 20px; cursor: pointer;'
+                    (click)='setInput(searchInput.value)'></i>
             </form>
 
         </div>
