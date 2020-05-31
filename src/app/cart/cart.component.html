@@ -35,8 +35,6 @@
             *ngIf="cartItems.length === 0">
             <div>
                 <h3 style="color: #33272a;">YOUR SHOPPING CART IS EMPTY!</h3>
-                <p class="mt-3" style="color: #33272a;" *ngIf="!isLogin">Sign in to save or access saved items in your shopping cart.</p>
-                <a style="cursor:pointer; text-decoration:underline;" (click)="openLogin()" *ngIf="!isLogin">SIGN IN</a>
             </div>
         </div>
 
@@ -58,9 +56,6 @@
                             </div>
                         </div>
                     </form>
-                    <p  *ngIf="!isLogin">Log in to use your member offers!
-                    </p>
-                    <button class="btn btn-outline-danger w-75" (click)="openLogin()"  *ngIf="!isLogin">LOGIN</button>
 
                     <div class="row my-4">
                         <div class="col-md-6">

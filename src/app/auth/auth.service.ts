@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthResponseData } from './auth';
 import { Subject } from 'rxjs';
+import { User } from './user.model';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  isLogin = new Subject<boolean>();
+  user = new Subject<User>();
   private apiKey = 'AIzaSyAaz4kQMCaZZw0GnFNJQ7dPk9GAS9zvoOA';
 
   private signupLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
@@ -22,7 +24,14 @@ export class AuthService {
       email: email,
       password: password,
       returnSecureToken: true
-    })
+    }).pipe(
+      tap(res => {
+        const expireTime = new Date(new Date().getTime() + +res.expiresIn * 1000);
+        const user = new User(res.email, res.localId, res.idToken, expireTime);
+        this.user.next(user);
+      })
+    )
+    
   }
 
   loginUser(email: string, password: string) {
@@ -30,7 +39,13 @@ export class AuthService {
       email: email,
       password: password,
       returnSecureToken: true
-    })
+    }).pipe(
+      tap(res => {
+        const expireTime = new Date(new Date().getTime() + +res.expiresIn * 1000);
+        const user = new User(res.email, res.localId, res.idToken, expireTime);
+        this.user.next(user);
+      })
+    )
   }
 
 }

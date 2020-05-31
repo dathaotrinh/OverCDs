@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
           console.log(res);
-          this.authService.isLogin.next(true);
           this.dialog.closeAll();
           this.router.navigate(['/cart']);
         },

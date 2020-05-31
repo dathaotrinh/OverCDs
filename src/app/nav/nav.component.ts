@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../shared/cart.service';
 import { NavService } from '../shared/nav.service';
+import { AuthService } from '../auth/auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../auth/login/login.component';
 
 @Component({
   selector: 'app-nav',
@@ -8,19 +11,26 @@ import { NavService } from '../shared/nav.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
- // searchInput ='';
-  numberOfItems = 0;
 
-  constructor(private cartService: CartService, private navService: NavService) { }
+  numberOfItems = 0;
+  isAuthenticated = false;
+  constructor(private cartService: CartService, private navService: NavService, private authService: AuthService, private dialog: MatDialog,) { }
 
   ngOnInit(): void {
     this.cartService.cartChanged
       .subscribe(data => {
         this.numberOfItems = data.length
       });
+      this.authService.user.subscribe(user => {
+        this.isAuthenticated = !user ? false: true;
+      })
   }
 
   setInput(input: string) {
     this.navService.inputSearchChanged.next(input);
+  }
+
+  openLogin() {
+    this.dialog.open(LoginComponent);
   }
 }

@@ -12,20 +12,13 @@ import { AuthService } from '../auth/auth.service';
 })
 export class CartComponent implements OnInit {
   cartItems: Album[];
-  isLogin: boolean;
+
+  isAuthenticated = false;
   constructor(private cartService: CartService, private dialog: MatDialog, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getItemInCart();
-    this.isLoginState();
-  }
 
-  isLoginState() {
-    this.authService.isLogin
-      .subscribe(res => {
-        this.isLogin = res;
-        console.log(this.isLogin);
-      })
   }
 
   openLogin() {
