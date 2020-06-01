@@ -13,13 +13,10 @@ export class AuthService {
 
   user = new Subject<User>();
   private apiKey = 'AIzaSyAaz4kQMCaZZw0GnFNJQ7dPk9GAS9zvoOA';
-
   private signupLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
-
   private loginLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
-
   private link = 'https://overcds-c873e.firebaseio.com/users/';
-
+  
   constructor(private http: HttpClient) { }
 
   signupNewUser(email: string, password: string) {
@@ -55,4 +52,7 @@ export class AuthService {
     return this.http.put(this.link + id + '.json', form.value);
   }
 
+  fetchUserData(id: string) {
+    return this.http.get(this.link + id + '.json');
+  }
 }

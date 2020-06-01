@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,11 +12,11 @@ import { AuthService } from '../auth.service';
 export class SignupComponent implements OnInit {
 
   errorMessage: string = '';
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
   }
-  
+
   onSubmitSignup(form: NgForm) {
     console.log(form);
     if (!form.valid) {
@@ -24,7 +26,9 @@ export class SignupComponent implements OnInit {
         .subscribe(res => {
           console.log(res.localId)
           this.authService.storeUserData(form, res.localId)
-            .subscribe(res => {});
+            .subscribe();
+          this.dialog.closeAll();
+          this.router.navigate(['/myaccount']);
         },
           error => {
             this.errorMessage = error.error.error.message;

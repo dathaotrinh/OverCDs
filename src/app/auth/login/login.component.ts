@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
-          console.log(res);
+          console.log(res.localId);
           this.dialog.closeAll();
-          this.router.navigate(['/cart']);
+          this.router.navigate(['/myaccount']);
         },
           error => {
             this.errorMessage = error.error.error.message;
