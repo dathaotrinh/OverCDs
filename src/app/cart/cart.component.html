@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="text-center pt-3" style="color: #33272a;">SHOPPING CART</h1>
+    <h1 class="text-center mt-5 mat-display-2" style="color: #33272a;">SHOPPING CART</h1>
 
     <div class="row">
         <!-- CART -->
@@ -11,7 +11,7 @@
                     </div>
                     <div class="col-xs-6 ml-4">
                         <h3 class="font-weight-bold text-truncate" style="max-width: 300px;">{{item.name}}</h3>
-                        <h4>{{item.artist.name}}</h4>
+                        <h4>{{item.artist['name']}}</h4>
                         <h4>USD {{item.price | currency: 'USD'}}</h4>
                         <select class="form-control" id="qty" style="width: 60px;">
                             <option>0 (Deleted)</option>
@@ -62,7 +62,7 @@
                             <p class="font-weight-bold">Total</p>
                         </div>
                         <div class="col-md-6">
-                            <p class="font-weight-bold ml-5">{{13| currency: 'USD'}}</p>
+                            <p class="font-weight-bold ml-5">{{total| currency: 'USD'}}</p>
                         </div>
                     </div>
                     <button class="btn btn-outline-danger w-75">CONTINUE TO CHECKOUT</button>

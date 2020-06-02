@@ -12,6 +12,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class CartComponent implements OnInit {
   cartItems: Album[];
+  total = 13.99;
 
   isAuthenticated = false;
   constructor(private cartService: CartService, private dialog: MatDialog, private authService: AuthService) { }
@@ -27,6 +28,7 @@ export class CartComponent implements OnInit {
 
   getItemInCart() {
     this.cartItems = this.cartService.getCartItems();
+    this.total *= this.cartItems.length;
   }
 
 }
