@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
           this.authService.storeUserData(form, res.localId)
             .subscribe();
           this.dialog.closeAll();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/products']);
         },
           error => {
             this.errorMessage = error.error.error.message;

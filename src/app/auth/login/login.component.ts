@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           console.log(res.localId);
           localStorage.setItem('key', JSON.stringify(res.localId));
           this.dialog.closeAll();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/products']);
         },
           error => {
             this.errorMessage = error.error.error.message;
