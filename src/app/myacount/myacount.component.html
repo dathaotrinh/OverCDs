@@ -5,12 +5,12 @@
         </div>
         <div class="col-md-9">
             <h3 class="font-weight-bold">ACCOUNT INFORMATION</h3>
-            <h4>First Name: {{firstname}}</h4>
-            <h4>Last Name:</h4>
-            <h4>Email Address:</h4>
+            <h4>First Name: {{userInfo['firstname']}}</h4>
+            <h4>Last Name: {{userInfo['lastname']}}</h4>
+            <h4>Email Address: {{userInfo['email']}}</h4>
             <h4>Gender: </h4>
-            <h4>Date of Birth:</h4>
-            <h4>Address: </h4>
+            <h4>Date of Birth: {{userInfo['dateofbirth']}}</h4>
+            <h4>Address: {{userInfo['zipcode']}}</h4>
         </div>
     </div>
 </div>

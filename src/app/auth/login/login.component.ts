@@ -34,8 +34,9 @@ export class LoginComponent implements OnInit {
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
           console.log(res.localId);
+          localStorage.setItem('key', JSON.stringify(res.localId));
           this.dialog.closeAll();
-          this.router.navigate(['/myaccount']);
+          this.router.navigate(['/home']);
         },
           error => {
             this.errorMessage = error.error.error.message;

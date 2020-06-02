@@ -8,16 +8,15 @@ import { AuthService } from '../auth/auth.service';
 })
 export class MyacountComponent implements OnInit {
 
-  firstname: string = 'abc';
+  userInfo = {};
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.user.subscribe(res => {
-      this.authService.fetchUserData(res.id).subscribe(data => {
-        console.log(data['firstname']);
-        this.firstname = data['firstname'];
+      this.authService.fetchUserData(localStorage.getItem('key').substring(1,localStorage.getItem('key').length-1)).subscribe(data => {
+        console.log(data);
+        this.userInfo = data;
       })
-    })
+    
   }
 
 }

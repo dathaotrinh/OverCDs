@@ -25,10 +25,11 @@ export class SignupComponent implements OnInit {
       this.authService.signupNewUser(form.value.email, form.value.password)
         .subscribe(res => {
           console.log(res.localId)
+          localStorage.setItem('key', JSON.stringify(res.localId));
           this.authService.storeUserData(form, res.localId)
             .subscribe();
           this.dialog.closeAll();
-          this.router.navigate(['/myaccount']);
+          this.router.navigate(['/home']);
         },
           error => {
             this.errorMessage = error.error.error.message;
