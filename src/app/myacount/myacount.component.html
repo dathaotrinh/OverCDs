@@ -1,6 +1,13 @@
 <div class="container-fluid my-5 pl-5">
-    <h1 style="font-size: 4.5rem; color: #33272a;">{{userInfo['firstname']}} {{userInfo['lastname']}}</h1>
-    <p class="mt-5 ml-2" style="font-size: 2rem;">{{userInfo['zipcode']}}</p>
+    <div class="row">
+        <div class="col-md-8">
+            <h1 style="font-size: 4.5rem; color: #33272a;">{{userInfo['firstname']}} {{userInfo['lastname']}}</h1>
+            <p class="mt-5 ml-2" style="font-size: 1.5rem;">{{userInfo['city']}}, {{userInfo['state']}}</p>
+        </div>
+        <div class="col-md-4 text-right">
+            <div class="btn btn-outline-danger mr-5 mt-5" (click)="onLogout()">LOG OUT</div>
+        </div>
+    </div>
 </div>
 
 <!-- Profile -->
@@ -19,7 +26,8 @@
             <h4>Email Address: {{userInfo['email']}}</h4>
             <h4>Gender: </h4>
             <h4>Date of Birth: {{userInfo['dateofbirth']}}</h4>
-            <h4>Address: {{userInfo['zipcode']}}</h4>
+            <h4>Address: {{userInfo['address']}}</h4>
+            <h4 class="ml-5 pl-3">{{userInfo['city']}}, {{userInfo['state']}} {{userInfo['zipcode']}}</h4>
         </div>
     </div>
 </div>

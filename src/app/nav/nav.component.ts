@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CartService } from '../shared/cart.service';
 import { NavService } from '../shared/nav.service';
 import { AuthService } from '../auth/auth.service';
@@ -11,7 +11,7 @@ import { LoginComponent } from '../auth/login/login.component';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+  @ViewChild('searchInput') searchInput: ElementRef;
   numberOfItems = 0;
   isAuthenticated = false;
   constructor(private cartService: CartService, private navService: NavService, private authService: AuthService, private dialog: MatDialog,) { }
@@ -28,6 +28,7 @@ export class NavComponent implements OnInit {
 
   setInput(input: string) {
     this.navService.inputSearchChanged.next(input);
+    this.searchInput.nativeElement.value = '';
   }
 
   openLogin() {

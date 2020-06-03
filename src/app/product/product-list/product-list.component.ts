@@ -22,7 +22,6 @@ export class ProductListComponent implements OnInit {
   getAlbumList() {
     this.productService.getAlbumList()
     .subscribe(res => {
-      // console.log(res);
       this.albums = res;
     })
   }
