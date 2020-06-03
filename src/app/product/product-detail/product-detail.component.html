@@ -3,61 +3,53 @@
         <div class="col-md-6 col-xs-12 text-center">
             <img class="img-responsive w-100" src="{{album['image']}}">
         </div>
-        <div class="col-md-5 col-xs-12 ml-5" >
-            <h2>{{album['artist']}} - {{album['name']}}</h2>
-            <h3 class="my-4" style="color: red">USD {{album['price'] | currency: 'USD'}}</h3>
+        <div class="col-md-5 col-xs-12 ml-5">
+            <h1 class="my-5" style="font-size: 2rem;">{{album['artist']}} - {{album['name']}}</h1>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row" style="border: none;">Price</th>
+                        <td style="border: none;">USD {{album['price'] | currency: 'USD'}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Listeners</th>
+                        <td>{{album['listeners']}}</td>
+                    </tr>
+                    <tr class="py-5">
+                        <th scope="row">Play Counts</th>
+                        <td >{{album['playcount']}}</td>
+                    </tr>
+                    <tr>
+                        <th  scope="row">Qty</th>
+                        <td >
+                            <select class="form-control" style="width: 60px;height: 30px;" id="state" name="state"
+                                ngModel required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td >{{39.99 | currency: 'USD'}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <div class="row">
-                <div class="col-md-6 col-xs-12">
-                    <span class="font-weight-bold">Listeners: </span>
-                    <span>{{album['listeners']}}</span>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                    <span class="font-weight-bold mt-5">Play Count: </span>
-                    <span>{{album['playcount']}}</span>
-                </div>
+            <div class="mt-5">
+                <button class="btn btn-danger ml-2">ADD TO CART</button>
             </div>
 
-            <!-- style="border: 1px solid gray;" -->
-            <div class="container mt-4 pb-4" style="border: 1px solid gray;">
-                <ul class="list-group">
-                    <li class="list-group-item font-weight-bold mt-3 list-group-item-light" style="border: none;">Qty</li>
 
-                    <div class="row">
-                        <div class="col-md-6 col-xs-6">
-                            <li class="list-group-item mb-5 my-3" style="border: none;">{{album['name']}}
-                            </li>
-                        </div>
-                        <div class="col-md-6 col-xs-6">
-                            <div class="input-group inline-group mt-3">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-danger btn-minus">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                </div>
-                                <input class="form-control quantity" min="0" name="quantity" value="1" type="number">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-danger btn-plus">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <li class="list-group-item font-weight-bold list-group-item-light" style="border: none;">Total</li>
-                    <div class="row mt-4">
-                        <div class="col-md-6 col-xs-6">
-                            <h3 class="ml-3" style="color: red;">{{39.99 | currency: 'USD'}}</h3>
-                        </div>
-                        <div class="col-md-6 col-xs-6">
-                            <button class="btn btn-danger ml-1">ADD TO CART</button>
-                        </div>
-                    </div>
 
-                </ul>
-            </div>  
-            
-            </div>
+        </div>
     </div>
     <div class="container">
         <div class="row">

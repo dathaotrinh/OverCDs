@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from 'src/app/shared/product.service';
-import { Album } from 'src/app/shared/album';
-import { AlbumInterface } from 'src/app/shared/album.interface';
+import {MatTableModule} from '@angular/material/table';
 
 @Component({
   selector: 'app-product-detail',
