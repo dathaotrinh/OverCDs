@@ -17,38 +17,29 @@
                     </tr>
                     <tr class="py-5">
                         <th scope="row">Play Counts</th>
-                        <td >{{album['playcount']}}</td>
+                        <td>{{album['playcount']}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Qty <span style="color: red;">*</span></th>
                         <td>
                             <select class="form-control" style="width: 60px;height: 30px;" id="state" name="state"
-                                ngModel required>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
+                                [(ngModel)]="selectedOption" required>
+                                <option *ngFor="let o of options">
+                                    {{o.name}}
+                                </option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">Total</th>
-                        <td >{{39.99 | currency: 'USD'}}</td>
+                        <td>{{total | currency: 'USD'}}</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="mt-5">
-                <button class="btn btn-danger ml-2">ADD TO CART</button>
+                <button class="btn btn-danger ml-2" (click)="getTotal()">ADD TO CART</button>
             </div>
-
-
-
         </div>
     </div>
     <div class="container">

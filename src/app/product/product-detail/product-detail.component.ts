@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ProductService } from 'src/app/shared/product.service';
-import {MatTableModule} from '@angular/material/table';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,10 +11,26 @@ import {MatTableModule} from '@angular/material/table';
 
 export class ProductDetailComponent implements OnInit {
 
+  @ViewChild('qty') qty: ElementRef;
   album: AlbumInfo = {};
   artist: string;
   name: string;
-  constructor(private route: ActivatedRoute, private productService: ProductService) { }
+  total = 13.99;
+  selectedOption: string;
+
+  options = [
+    { name: "1", value: 1 },
+    { name: "2", value: 2 },
+    { name: "3", value: 3 },
+    { name: "4", value: 4 },
+    { name: "5", value: 5 },
+    { name: "6", value: 6 },
+    { name: "7", value: 7 },
+    { name: "8", value: 8 },
+    { name: "9", value: 9 }
+  ]
+
+  constructor(private route: ActivatedRoute, private productService: ProductService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.route.params
@@ -37,6 +53,10 @@ export class ProductDetailComponent implements OnInit {
       })
   }
 
+  getTotal() {
+    this.total = 13.99;
+    this.total *= +this.selectedOption;
+  }
 
 }
 

@@ -13,13 +13,12 @@ import { AuthService } from '../auth/auth.service';
 export class CartComponent implements OnInit {
   cartItems: Album[];
   total = 13.99;
-
   isAuthenticated = false;
+  
   constructor(private cartService: CartService, private dialog: MatDialog, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.getItemInCart();
-
   }
 
   openLogin() {

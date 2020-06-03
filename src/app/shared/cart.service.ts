@@ -17,6 +17,14 @@ export class CartService {
     this.cartChanged.next(this.cartList);
   }
 
+  // addItemsToCart(item: Album, qty: number) {
+  //   while(qty > 0) {
+  //     this.cartList.push(item);
+  //     qty--;
+  //   }
+  //   this.cartChanged.next(this.cartList);
+  // }
+
   getCartItems(): Album[] {    
     return this.cartList;
   }
