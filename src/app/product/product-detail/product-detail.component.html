@@ -1,23 +1,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-xs-12 text-center">
-            <img class="img-responsive w-100" src="{{album['image']}}">
+            <img class="img-responsive w-100" src="{{albumInfo['image']}}">
         </div>
         <div class="col-md-5 col-xs-12 ml-5">
-            <h1 class="my-5" style="font-size: 2rem;">{{album['artist']}} - {{album['name']}}</h1>
+            <h1 class="my-5" style="font-size: 2rem;">{{albumInfo['artist']}} - {{albumInfo['name']}}</h1>
             <table class="table">
                 <tbody>
                     <tr>
                         <th scope="row" style="border: none;">Price</th>
-                        <td style="border: none;">USD {{album['price'] | currency: 'USD'}}</td>
+                        <td style="border: none;">USD {{albumInfo['price'] | currency: 'USD'}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Listeners</th>
-                        <td>{{album['listeners']}}</td>
+                        <td>{{albumInfo['listeners']}}</td>
                     </tr>
                     <tr class="py-5">
                         <th scope="row">Play Counts</th>
-                        <td>{{album['playcount']}}</td>
+                        <td>{{albumInfo['playcount']}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Qty <span style="color: red;">*</span></th>
@@ -48,12 +48,12 @@
                 <ul class="list-group">
                     <li class="list-group-item font-weight-bold mt-5 list-group-item-light">SUMMARY</li>
                     <li class="list-group-item mb-5 my-3" style="border: none;     line-height: 2em;
-                    ">{{album['wiki']}}</li>
+                    ">{{albumInfo['wiki']}}</li>
                 </ul>
 
                 <ul class="list-group">
                     <li class="list-group-item font-weight-bold list-group-item-light my-3">TRACK LIST</li>
-                    <li class="list-group-item" style="border: none;" *ngFor="let track of album['tracks']">
+                    <li class="list-group-item" style="border: none;" *ngFor="let track of albumInfo['tracks']">
                         {{track['name']}}</li>
                 </ul>
             </div>

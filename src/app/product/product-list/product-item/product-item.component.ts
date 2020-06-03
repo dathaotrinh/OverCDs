@@ -12,7 +12,6 @@ import { ProductService } from 'src/app/shared/product.service';
 export class ProductItemComponent implements OnInit {
 
   @Input() albums = [];
-  albumSelected: Album;
   searchInput = ''; 
 
   constructor(private cartService: CartService, private navService: NavService, private productService: ProductService) { }
@@ -21,13 +20,16 @@ export class ProductItemComponent implements OnInit {
     this.getSearchInput();
   }
 
-  setSelectedAlbum(album: Album) {
-    this.productService.albumSelected.next(album);
-  }
+  // setSelectedAlbum(album: Album) {
+  //   this.productService.albumSelected.next(album);
+  // }
+
   addItemToCart(id: string): void{
-    const item = this.albums.find(ele => ele.id === id);
+    const item = this.albums.find(ele => ele.name === 'One of the Boys');
+    console.log(item)
     this.cartService.addItemToCart(item);
   }
+
 
   getSearchInput() {
     this.navService.inputSearchChanged.subscribe(res => {

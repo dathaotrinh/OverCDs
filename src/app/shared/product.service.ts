@@ -16,7 +16,6 @@ export class ProductService implements OnInit {
   private url = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&api_key=" + this.apiKey + "&format=json";
 
 
-  albumSelected= new Subject<Album>();
   constructor(private http: HttpClient) { }
 
 

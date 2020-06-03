@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
   albums: Album[] = [];
   artists= [];
   page = 1;
-  constructor(private productService: ProductService, private auth: AuthService) { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.getAlbumList(this.page);
@@ -22,7 +22,6 @@ export class ProductListComponent implements OnInit {
   getAlbumList(i: number) {
     this.productService.getAlbumList(i)
     .subscribe(res => {
-      // console.log(res);
       this.albums = res;
     })
   }
