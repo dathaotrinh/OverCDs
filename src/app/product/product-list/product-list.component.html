@@ -18,3 +18,17 @@
 
 
 </div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li class="page-item">
+        <a class="page-link" *ngIf='page>1' (click)="onPrevious()">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link">{{page}}</a></li>
+      <li class="page-item"><a class="page-link">{{page+1}}</a></li>
+      <li class="page-item"><a class="page-link">{{page+2}}</a></li>
+      <li class="page-item">
+        <a class="page-link" (click)='onNext()'>Next</a>
+      </li>
+    </ul>
+  </nav>

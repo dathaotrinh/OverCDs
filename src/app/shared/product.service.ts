@@ -37,8 +37,8 @@ export class ProductService implements OnInit {
       ))
   }
   
-  getAlbumList() : Observable<AlbumInterface[]>{
-    return this.http.get<AlbumInterface[]>(this.url)
+  getAlbumList(i: number) : Observable<AlbumInterface[]>{
+    return this.http.get<AlbumInterface[]>(this.url + '&page=' + i)
       .pipe(
         map(res => res['albums']['album']),
         map(res => {

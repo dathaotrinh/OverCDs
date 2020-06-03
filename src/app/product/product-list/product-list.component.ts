@@ -11,17 +11,18 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class ProductListComponent implements OnInit {
   albums: Album[] = [];
   artists= [];
-
+  page = 1;
   constructor(private productService: ProductService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    this.getAlbumList();
+    this.getAlbumList(this.page);
     this.getArtistList();  
   }
 
-  getAlbumList() {
-    this.productService.getAlbumList()
+  getAlbumList(i: number) {
+    this.productService.getAlbumList(i)
     .subscribe(res => {
+      // console.log(res);
       this.albums = res;
     })
   }
@@ -33,4 +34,13 @@ export class ProductListComponent implements OnInit {
     })
   }
 
+  onPrevious() {
+    this.page -= 1;
+    this.getAlbumList(this.page);
+  }
+
+  onNext() {
+    this.page += 1;
+    this.getAlbumList(this.page);
+  }
 }
