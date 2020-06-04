@@ -20,13 +20,8 @@ export class ProductItemComponent implements OnInit {
     this.getSearchInput();
   }
 
-  // setSelectedAlbum(album: Album) {
-  //   this.productService.albumSelected.next(album);
-  // }
-
   addItemToCart(id: string): void{
-    const item = this.albums.find(ele => ele.name === 'One of the Boys');
-    console.log(item)
+    const item = this.albums.find(ele => ele.id === id);
     this.cartService.addItemToCart(item);
   }
 

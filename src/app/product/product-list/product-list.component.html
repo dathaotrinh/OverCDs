@@ -1,34 +1,33 @@
 <!-- display products -->
 <div class="row mt-5">
 
-    <!-- Side Bar -->
-    <div class="col-md-3 col-sm-4">
-        <h3 class="mx-5 mb-5">Hot Artist</h3>
-        <p class="mx-5" id="name" *ngFor="let artist of artists">{{artist}}</p>
+  <!-- Side Bar -->
+  <div class="col-md-3 col-sm-4">
+    <h3 class="mx-5 mb-5">Hot Artist</h3>
+    <p class="mx-5" id="name" *ngFor="let artist of artists">{{artist}}</p>
 
+  </div>
+
+  <!-- Product List -->
+  <div class="col-md-9 col-sm-8">
+    <div>
+      <app-product-item [albums]='albums'></app-product-item>
     </div>
-
-    <!-- Product List -->
-    <div class="col-md-9 col-sm-8">
-        <div>
-            <app-product-item [albums]='albums'></app-product-item>
-        </div>
-    </div>
-
-
-
+  </div>
 </div>
 
+
+
 <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-end">
-      <li class="page-item">
-        <a class="page-link" *ngIf='page>1' (click)="onPrevious()">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link">{{page}}</a></li>
-      <li class="page-item"><a class="page-link">{{page+1}}</a></li>
-      <li class="page-item"><a class="page-link">{{page+2}}</a></li>
-      <li class="page-item">
-        <a class="page-link" (click)='onNext()'>Next</a>
-      </li>
-    </ul>
-  </nav>
+  <ul class="pagination justify-content-end">
+    <li class="page-item">
+      <a class="page-link" *ngIf='page>1' (click)="onPrevious()">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link">{{page}}</a></li>
+    <li class="page-item"><a class="page-link">{{page+1}}</a></li>
+    <li class="page-item"><a class="page-link">{{page+2}}</a></li>
+    <li class="page-item">
+      <a class="page-link" (click)='onNext()'>Next</a>
+    </li>
+  </ul>
+</nav>
