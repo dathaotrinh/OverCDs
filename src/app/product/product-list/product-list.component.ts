@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
 import { Album } from 'src/app/shared/album';
 import { EventEmitter } from 'protractor';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -13,18 +13,24 @@ export class ProductListComponent implements OnInit {
   albums: Album[] = [];
   artists = [];
   page = 1;
-  constructor(private productService: ProductService, private route: ActivatedRoute) {}
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
 
     this.route.params.subscribe((params: Params) => {
       this.page = params['page'];
       console.log(params['page']);
+      this.getAlbumList(this.page);
     })
-    this.getAlbumList(this.page);
     this.getArtistList();
+
+    // reload the page
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
   }
 
+  
   getAlbumList(i: number) {
     this.productService.getAlbumList(i).subscribe((res) => {
       this.albums = res;
@@ -38,13 +44,14 @@ export class ProductListComponent implements OnInit {
   }
 
   onPrevious() {
-    this.page = this.page - 1;
-    // this.getAlbumList(this.page);
-
+    this.page = +this.page - 1;
+    this.router.navigate([this.page])
   }
 
   onNext() {
-    this.page = this.page + 1;
-    // this.getAlbumList(this.page);
+    this.page = +this.page + 1;
+    this.router.navigate(['../' + this.page], {relativeTo: this.route})
+  //  this.getAlbumList(this.page);
   }
+
 }
