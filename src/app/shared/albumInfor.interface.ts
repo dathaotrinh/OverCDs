@@ -6,5 +6,5 @@ export interface AlbumInfo {
     listeners: number;
     playcount: number;
     tracks: {};
-    wiki: {};
+    wiki?: {};
   }

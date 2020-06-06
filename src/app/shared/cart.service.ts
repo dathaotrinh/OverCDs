@@ -13,6 +13,7 @@ export class CartService {
   constructor() { }
 
   addItemToCart(item: Album) {
+    console.log(item);
     this.cartList.push(item);
     this.cartChanged.next(this.cartList);
   }
@@ -25,7 +26,8 @@ export class CartService {
     this.cartChanged.next(this.cartList);
   }
 
-  getCartItems(): Album[] {    
+  getCartItems(): Album[] {  
+
     return this.cartList;
   }
 

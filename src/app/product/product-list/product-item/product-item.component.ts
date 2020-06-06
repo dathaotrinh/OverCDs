@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Album } from 'src/app/shared/album';
 import { CartService } from 'src/app/shared/cart.service';
 import { NavService } from 'src/app/shared/nav.service';
 import { ProductService } from 'src/app/shared/product.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-item',
@@ -13,21 +14,31 @@ export class ProductItemComponent implements OnInit {
   albums = [];
   searchInput = '';
   @Input() page;
+  @Output() pageChanged= new EventEmitter<number>();
+
   constructor(
     private cartService: CartService,
     private navService: NavService,
-    private productService: ProductService
+    private productService: ProductService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.productService
       .getAlbumList(this.page)
-      .subscribe((res) => (this.albums = res));
+      .subscribe((res) => {
+      console.log(res);
+      (this.albums = res)});
     this.getSearchInput();
+    this.route.params.subscribe(res => {
+      console.log(res['page'])
+      this.pageChanged.emit(res['page'])
+    })
   }
 
   addItemToCart(id: string): void {
     const item = this.albums.find((ele) => ele.id === id);
+    console.log(item);
     this.cartService.addItemToCart(item);
   }
 

@@ -14,6 +14,7 @@ export class ProductService implements OnInit {
 
   private apiKey = "143579767c21ff50b45aea9f80b8c1a2";
   private url = "http://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&api_key=" + this.apiKey + "&format=json";
+  pageChanged= new Subject<number>();
 
 
   constructor(private http: HttpClient) { }
@@ -61,16 +62,20 @@ export class ProductService implements OnInit {
             .pipe(
               map(res => res['album']),
               map(data => {
+                console.log(typeof(data.wiki))
+                console.log(data.wiki)
+
                 return {
                   artist: data.artist,
                   image: data.image[5]['#text'],
                   price: 13.99,
-                  listeners: data.listeners,
-                  name: data.name,
+                  listeners: data.listeners ,
+                  name: data.name ,
                   playcount: data.playcount,
                   tracks: data.tracks.track,
-                  wiki: data.wiki.summary
-                }}),
+                  wiki: typeof(data.wiki) === 'undefined' ?  '' : data.wiki.summary
+                }
+              }),
 
               )
       }

@@ -17,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   total = 13.99;
   selectedOption: string;
   albums: Album[];
+  page;
 
   options = [
     { name: '1', value: 1 },
@@ -40,11 +41,14 @@ export class ProductDetailComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       this.artist = params['artist'];
       this.name = params['name'];
+      this.page = params['page']
     });
 
     this.getProductInfo(this.name, this.artist);
 
-    this.productService.getAlbumList(1).subscribe((res) => (this.albums = res));
+    this.productService
+      .getAlbumList(this.page)
+      .subscribe((res) => (this.albums = res));
   }
 
   getProductInfo(album: string, artist: string) {
@@ -57,7 +61,9 @@ export class ProductDetailComponent implements OnInit {
   getTotal() {
     this.total = 13.99;
     this.total *= +this.selectedOption;
+    console.log(this.albums);
     const item = this.albums.find((ele) => ele.name === this.name);
+    console.log(item);
     this.cartService.addItemsToCart(item, +this.selectedOption);
   }
 }
