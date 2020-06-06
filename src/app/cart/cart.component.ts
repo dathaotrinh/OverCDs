@@ -16,14 +16,10 @@ export class CartComponent implements OnInit {
   total = 13.99;
   isAuthenticated = false;
   
-  constructor(private cartService: CartService, private dialog: MatDialog) { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getItemInCart();
-  }
-
-  openLogin() {
-    this.dialog.open(LoginComponent);
   }
 
   getItemInCart() {

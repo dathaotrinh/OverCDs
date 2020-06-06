@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/shared/product.service';
 import { Album } from 'src/app/shared/album';
 import { EventEmitter } from 'protractor';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -12,9 +13,14 @@ export class ProductListComponent implements OnInit {
   albums: Album[] = [];
   artists = [];
   page = 1;
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+
+    this.route.params.subscribe((params: Params) => {
+      this.page = params['page'];
+      console.log(params['page']);
+    })
     this.getAlbumList(this.page);
     this.getArtistList();
   }
@@ -33,12 +39,12 @@ export class ProductListComponent implements OnInit {
 
   onPrevious() {
     this.page = this.page - 1;
-    this.getAlbumList(this.page);
+    // this.getAlbumList(this.page);
 
   }
 
   onNext() {
     this.page = this.page + 1;
-    this.getAlbumList(this.page);
+    // this.getAlbumList(this.page);
   }
 }

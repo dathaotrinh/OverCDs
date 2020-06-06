@@ -7,29 +7,33 @@ import { ProductService } from 'src/app/shared/product.service';
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
-  styleUrls: ['./product-item.component.css']
+  styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
-
-  @Input() albums = [];
-  searchInput = ''; 
-
-  constructor(private cartService: CartService, private navService: NavService, private productService: ProductService) { }
+  albums = [];
+  searchInput = '';
+  @Input() page;
+  constructor(
+    private cartService: CartService,
+    private navService: NavService,
+    private productService: ProductService
+  ) {}
 
   ngOnInit(): void {
+    this.productService
+      .getAlbumList(this.page)
+      .subscribe((res) => (this.albums = res));
     this.getSearchInput();
   }
 
-  addItemToCart(id: string): void{
-    const item = this.albums.find(ele => ele.id === id);
+  addItemToCart(id: string): void {
+    const item = this.albums.find((ele) => ele.id === id);
     this.cartService.addItemToCart(item);
   }
 
-
   getSearchInput() {
-    this.navService.inputSearchChanged.subscribe(res => {
+    this.navService.inputSearchChanged.subscribe((res) => {
       this.searchInput = res;
-    })
+    });
   }
-
 }
