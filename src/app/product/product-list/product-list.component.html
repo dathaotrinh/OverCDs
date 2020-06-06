@@ -21,13 +21,13 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-end">
     <li class="page-item">
-      <a class="page-link" *ngIf='page>1' (click)="onPrevious()">Previous</a>
+      <button class="page-link" [disabled]='+page<2' (click)="onPrevious()">Previous</button>
     </li>
-    <li class="page-item"><a class="page-link">{{page}}</a></li>
-    <li class="page-item"><a class="page-link">{{page+1}}</a></li>
-    <li class="page-item"><a class="page-link">{{page+2}}</a></li>
+    <li class="page-item"><button class="page-link" (click)="onChangePage(+page+1)">{{+page+1}}</button></li>
+    <li class="page-item"><button class="page-link" (click)="onChangePage(+page+2)">{{+page+2}}</button></li>
+    <li class="page-item"><button class="page-link" (click)="onChangePage(+page+3)">{{+page+3}}</button></li>
     <li class="page-item">
-      <a class="page-link" (click)='onNext()'>Next</a>
+      <button class="page-link" (click)='onNext()'>Next</button>
     </li>
   </ul>
 </nav>

@@ -45,13 +45,15 @@ export class ProductListComponent implements OnInit {
 
   onPrevious() {
     this.page = +this.page - 1;
-    this.router.navigate([this.page])
+    this.router.navigate(['../' + this.page], {relativeTo: this.route})
   }
 
   onNext() {
     this.page = +this.page + 1;
     this.router.navigate(['../' + this.page], {relativeTo: this.route})
-  //  this.getAlbumList(this.page);
   }
 
+  onChangePage(page: number) {
+    this.router.navigate(['../' + page], {relativeTo: this.route})
+  }
 }
