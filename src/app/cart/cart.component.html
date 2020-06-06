@@ -14,16 +14,16 @@
                         <h4>{{item.artist['name']}}</h4>
                         <h4>USD {{item.price | currency: 'USD'}}</h4>
                         <select class="form-control" id="qty" style="width: 60px;">
-                            <option>0 (Deleted)</option>
-                            <option selected="selected">1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
+                            <option >0 (Deleted)</option>
+                            <option [selected]="item.qty===1">1</option>
+                            <option [selected]="item.qty===2">2</option>
+                            <option [selected]="item.qty===3">3</option>
+                            <option [selected]="item.qty===4">4</option>
+                            <option [selected]="item.qty===5">5</option>
+                            <option [selected]="item.qty===6">6</option>
+                            <option [selected]="item.qty===7">7</option>
+                            <option [selected]="item.qty===8">8</option>
+                            <option [selected]="item.qty===9">9</option>
                         </select>
                     </div>
 

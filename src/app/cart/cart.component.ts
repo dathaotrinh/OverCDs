@@ -1,30 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../shared/cart.service';
 import { Album } from '../shared/album';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginComponent } from '../auth/login/login.component';
-import { AuthService } from '../auth/auth.service';
-import { ProductService } from '../shared/product.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
   cartItems: Album[];
-  total = 13.99;
+  total = 0;
   isAuthenticated = false;
-  
-  constructor(private cartService: CartService) { }
+
+  constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.getItemInCart();
   }
 
   getItemInCart() {
+    let price = 13.99;
     this.cartItems = this.cartService.getCartItems();
-    this.total *= this.cartItems.length;
+    for (let i = 0; i < this.cartItems.length; i++) {
+      this.total += price * this.cartItems[i].qty;
+    }
   }
-
 }
