@@ -8,6 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'overcds';
   ngOnInit() {
-    if(localStorage.length === 1) localStorage.clear();
+    if(localStorage.getItem('key') !== '') localStorage.clear();
   }
 }

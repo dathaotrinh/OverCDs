@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate {
     route: ActivatedRouteSnapshot,
     router: RouterStateSnapshot
   ): boolean | Promise<boolean> | Observable<boolean> | UrlTree{
-    if(localStorage.length === 1) return true;
+    if(localStorage.getItem('key') !== '') return true;
     else this.router.navigate(['/home']);
   }
 }
