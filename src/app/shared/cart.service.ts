@@ -26,4 +26,8 @@ export class CartService {
   getCartItems(): Album[] {
     return this.cartList;
   }
+
+  clearCart() {
+    this.cartList = [];
+  }
 }
