@@ -12,17 +12,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AuthGuardService implements CanActivate {
-
   constructor(private authService: AuthService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     router: RouterStateSnapshot
   ): boolean | Promise<boolean> | Observable<boolean> {
-    return this.authService.user.pipe(
-      map(user => {
-        return !!user;
-      })
-    );
+    return localStorage.length === 1;
   }
 }
