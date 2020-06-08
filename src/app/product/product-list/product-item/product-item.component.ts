@@ -39,8 +39,8 @@ export class ProductItemComponent implements OnInit {
   addItemToCart(id: string): void {
     const item = this.albums.find((ele) => ele.id === id);
    // console.log(item);
-   const temp = new Album(item.id, item.name, item.artist, item.image, item.price, 1)
-    this.cartService.addItemToCart(temp);
+   //const temp = new Album(item.id, item.name, item.artist, item.image, item.price, 1)
+    this.cartService.addItemsToCart(item, 1);
   }
 
   getSearchInput() {

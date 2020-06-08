@@ -11,15 +11,16 @@ export class CartService {
 
   constructor() {}
 
-  addItemToCart(item: Album) {
-    // console.log(item);
-    this.cartList.push(item);
-    this.cartChanged.next(this.cartList);
-  }
+  // addItemToCart(item: Album) {
+  //   // console.log(item);
+  //   this.cartList.push(item);
+  //   this.cartChanged.next(this.cartList);
+  // }
 
   addItemsToCart(item: Album, qty: number) {
     const albumWithQty = new Album(item.id, item.name, item.artist, item.image, item.price, qty);
     this.cartList.push(albumWithQty);
+    localStorage.setItem('products', JSON.stringify(this.cartList));
     this.cartChanged.next(this.cartList);
   }
 
