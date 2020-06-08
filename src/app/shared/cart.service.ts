@@ -24,18 +24,21 @@ export class CartService {
     );
     this.cartList.push(albumWithQty);
 
-    if (localStorage.getItem('key') !== '') {
-      console.log(localStorage.getItem('key').substring(1, localStorage.getItem('key').length-1));
+    if (typeof localStorage.getItem('key') !== 'object') {
       const saveLink =
         'https://overcds-c873e.firebaseio.com/users/' +
-        localStorage.getItem('key').substring(1, localStorage.getItem('key').length-1)  + '.json';
-        this.http.patch(saveLink, {
-          products: this.cartList
-        }).subscribe(res=>{
+        localStorage
+          .getItem('key')
+          .substring(1, localStorage.getItem('key').length - 1) +
+        '.json';
+      this.http
+        .patch(saveLink, {
+          products: this.cartList,
+        })
+        .subscribe((res) => {
           console.log(res);
         });
     }
-    localStorage.setItem('products', JSON.stringify(this.cartList));
     this.cartChanged.next(this.cartList);
   }
 
