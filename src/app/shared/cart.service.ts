@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Album } from './album';
 import { Subject } from 'rxjs';
+import { AuthService } from '../auth/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -9,17 +11,30 @@ export class CartService {
   cartList: Album[] = [];
   cartChanged = new Subject<Album[]>();
 
-  constructor() {}
-
-  // addItemToCart(item: Album) {
-  //   // console.log(item);
-  //   this.cartList.push(item);
-  //   this.cartChanged.next(this.cartList);
-  // }
+  constructor(private auth: AuthService, private http: HttpClient) {}
 
   addItemsToCart(item: Album, qty: number) {
-    const albumWithQty = new Album(item.id, item.name, item.artist, item.image, item.price, qty);
+    const albumWithQty = new Album(
+      item.id,
+      item.name,
+      item.artist,
+      item.image,
+      item.price,
+      qty
+    );
     this.cartList.push(albumWithQty);
+
+    if (localStorage.getItem('key') !== '') {
+      console.log(localStorage.getItem('key').substring(1, localStorage.getItem('key').length-1));
+      const saveLink =
+        'https://overcds-c873e.firebaseio.com/users/' +
+        localStorage.getItem('key').substring(1, localStorage.getItem('key').length-1)  + '.json';
+        this.http.patch(saveLink, {
+          products: this.cartList
+        }).subscribe(res=>{
+          console.log(res);
+        });
+    }
     localStorage.setItem('products', JSON.stringify(this.cartList));
     this.cartChanged.next(this.cartList);
   }
