@@ -9,8 +9,12 @@
                 </div>
                 <label for="email">Email <span style="color: red;">*</span></label>
                 <input type="email" class="form-control" id="email" name="email" ngModel required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 <label for="password" class="mt-2">Create a password <span style="color: red;">*</span></label>
-                <input type="password" class="form-control" id="password" name="password" ngModel required>
+                <input type="password" class="form-control" id="password" name="password" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                ngModel required>
+                <small id="emailHelp" class="form-text text-muted">Must contain at least 1 number, 1 uppercase, 1 lowercase letter and at least 8 or more characters.</small>
+
                 <label for="fname" class="mt-2">First name <span style="color: red;">*</span></label>
                 <input type="text" class="form-control" id="fname" name="firstname" ngModel required>
                 <label for="lname" class="mt-2">Last name <span style="color: red;">*</span></label>
@@ -83,12 +87,12 @@
                 <input disabled type="text" class="form-control" id="country" name="country" placeholder="United States">
                 <label for="zipcode" class="mt-2">Zip code <span style="color: red;">*</span></label>
                 <input type="number" class="form-control" id="zipcode" pattern="[0-9]{5}" name="zipcode" ngModel required>
+                <small id="support" class="form-text text-muted">Please use 5 digit zip code.</small>
             </div>
             <p class="text-center">By clicking ‘Become a member’, I agree to the OverCDs Membership Terms and
                 conditions.
             </p>
-            <button class="form-control btn btn-danger mt-3">BECOME A MEMBER</button>
-
+            <button class="form-control btn btn-danger mt-3" [disabled]='!signupForm.valid'>BECOME A MEMBER</button>
         </mat-dialog-content>
 
     </form>

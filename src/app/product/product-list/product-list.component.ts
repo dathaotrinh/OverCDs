@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
       this.page = params['page'];
-      console.log(params['page']);
+      // console.log(params['page']);
       this.getAlbumList(this.page);
     })
     this.getArtistList();

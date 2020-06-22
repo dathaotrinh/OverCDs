@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.authService.loginUser(form.value.email, form.value.password)
         .subscribe(res => {
-          console.log(res.localId);
+          // console.log(res.localId);
           localStorage.setItem('key', JSON.stringify(res.localId));
           this.cartService.fetchItems();
           this.dialog.closeAll();
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         },
           error => {
             this.errorMessage = error.error.error.message;
-            console.log(error.error.error.message)
+            // console.log(error.error.error.message)
           })
     }  }
 }

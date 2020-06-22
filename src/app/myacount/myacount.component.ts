@@ -15,7 +15,7 @@ export class MyacountComponent implements OnInit {
 
   ngOnInit(): void {
       this.authService.fetchUserData(localStorage.getItem('key').substring(1,localStorage.getItem('key').length-1)).subscribe(data => {
-        console.log(data);
+        // console.log(data);
         this.userInfo = data;
       })
   }

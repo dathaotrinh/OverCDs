@@ -22,19 +22,17 @@ export class ProductItemComponent implements OnInit {
     private cartService: CartService,
     private navService: NavService,
     private productService: ProductService,
-    private route: ActivatedRoute,
-    private auth: AuthService,
-    private http: HttpClient
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.productService.getAlbumList(this.page).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
       this.albums = res;
     });
     this.getSearchInput();
     this.route.params.subscribe((res) => {
-      console.log(res['page']);
+      // console.log(res['page']);
       this.pageChanged.emit(res['page']);
     });
   }

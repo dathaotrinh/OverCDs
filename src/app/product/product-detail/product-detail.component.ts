@@ -61,9 +61,9 @@ export class ProductDetailComponent implements OnInit {
   getTotal() {
     this.total = 13.99;
     this.total *= +this.selectedOption;
-    console.log(this.albums);
+    // console.log(this.albums);
     const item = this.albums.find((ele) => ele.name === this.name);
-    console.log(item);
+    // console.log(item);
     this.cartService.addItemsToCart(item, +this.selectedOption);
   }
 }

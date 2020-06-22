@@ -18,13 +18,16 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmitSignup(form: NgForm) {
-    console.log(form);
     if (!form.valid) {
-      this.errorMessage = 'Please fill in the required fields.';
+      // if(form.value.zipcode.length() != 5) {
+      //   this.errorMessage = 'Please use 5 digit zip code.';        
+      // } else{
+      //   this.errorMessage = 'Please fill in the required fields.';
+      // }
     } else {
       this.authService.signupNewUser(form.value.email, form.value.password)
         .subscribe(res => {
-          console.log(res.localId)
+          // console.log(res.localId)
           localStorage.setItem('key', JSON.stringify(res.localId));
           this.authService.storeUserData(form, res.localId)
             .subscribe();
