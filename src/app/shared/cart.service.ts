@@ -36,10 +36,27 @@ export class CartService {
           products: this.cartList,
         })
         .subscribe((res) => {
-          console.log(res);
         });
     }
     this.cartChanged.next(this.cartList);
+  }
+
+  fetchItems() {
+    if (typeof localStorage.getItem('key') !== 'object') {
+      const saveLink =
+        'https://overcds-c873e.firebaseio.com/users/' +
+        localStorage
+          .getItem('key')
+          .substring(1, localStorage.getItem('key').length - 1) +
+        '/products.json';
+      this.http
+        .get<Album[]>(saveLink)
+        .subscribe((res) => {
+          this.cartList.push(...res);
+          this.cartChanged.next(this.cartList);
+        });
+
+    }
   }
 
   getCartItems(): Album[] {

@@ -4,6 +4,7 @@ import { SignupComponent } from '../signup/signup.component';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private dialog: MatDialog, private authService: AuthService, private router: Router) { }
+  constructor(private dialog: MatDialog, private authService: AuthService, private router: Router, private cartService: CartService) { }
 
   ngOnInit(): void {
   }
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
         .subscribe(res => {
           console.log(res.localId);
           localStorage.setItem('key', JSON.stringify(res.localId));
+          this.cartService.fetchItems();
           this.dialog.closeAll();
           this.router.navigate(['/products/1']);
         },
