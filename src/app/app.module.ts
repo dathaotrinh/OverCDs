@@ -20,6 +20,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MyacountComponent } from './myacount/myacount.component';
+import { ExchangeComponent } from './exchange/exchange.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MyacountComponent } from './myacount/myacount.component';
     AuthComponent,
     LoginComponent,
     SignupComponent,
-    MyacountComponent
+    MyacountComponent,
+    ExchangeComponent
   ],
   imports: [
     BrowserModule,

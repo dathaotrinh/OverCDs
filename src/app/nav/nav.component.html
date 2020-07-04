@@ -1,42 +1,45 @@
 <nav class="navbar navbar-expand-lg navbar-light mb-3">
 
-    <a class="navbar-brand" routerLink="/home"><i class="fas fa-record-vinyl"></i>verCDs</a>
+  <a class="navbar-brand" routerLink="/home"><i class="fas fa-record-vinyl"></i>verCDs</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse mr-sm-2" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-            </li>
-            <li class="nav-item" *ngIf="isAuthenticated">
-                <a class="nav-link" routerLink="/myaccount" routerLinkActive="active">My Account</a>
-            </li>
-            <li class="nav-item" *ngIf="!isAuthenticated">
-                <a class="nav-link" (click)="openLogin()">Sign In</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/products/1" routerLinkActive="active">Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/cart" routerLinkActive="active">Cart ({{numberOfItems}})</a>
-            </li>
-        </ul>
+  <div class="collapse navbar-collapse mr-sm-2" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a class="nav-link" routerLink="/myaccount" routerLinkActive="active">My Account</a>
+      </li>
+      <li class="nav-item" *ngIf='isAuthenticated'>
+        <a class="nav-link" routerLink="/exchange-service" routerLinkActive="active">Exchange Service</a>
+      </li>
 
-        <div class="form-container">
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" (click)="openLogin()" style="cursor: pointer;">Sign In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/products/1" routerLinkActive="active">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/cart" routerLinkActive="active">Cart ({{numberOfItems}})</a>
+      </li>
+    </ul>
 
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                    style='border-top: none; border-left: none; border-right: none;' #searchInput>
-                <i class="fas fa-search" style='font-size: 20px; cursor: pointer;'
-                    (click)='setInput(searchInput.value)'></i>
-            </form>
+    <div class="form-container">
 
-        </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control ml-sm-5 mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+          style='border-top: none; border-left: none; border-right: none;' #searchInput>
+        <i class="fas fa-search" style='font-size: 20px; cursor: pointer;' (click)='setInput(searchInput.value)'></i>
+      </form>
 
     </div>
+
+  </div>
 
 </nav>

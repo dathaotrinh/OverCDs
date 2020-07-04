@@ -7,6 +7,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { MyacountComponent } from './myacount/myacount.component';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { ExchangeComponent } from './exchange/exchange.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path: ':page', component: ProductListComponent},
     {path: ':page/:id/:name/:artist', component: ProductDetailComponent},
   ]},
+  {path: 'exchange-service', component: ExchangeComponent},
   {path: 'cart', component: CartComponent},
   {path: 'myaccount', component: MyacountComponent, canActivate: [AuthGuardService]}
 ];
