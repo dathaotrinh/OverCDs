@@ -23,6 +23,8 @@ import { MyacountComponent } from './myacount/myacount.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { ExchangeItemComponent } from './exchange/exchange-item/exchange-item.component';
 import { AddItemFormComponent } from './exchange/add-item-form/add-item-form.component';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AddItemFormComponent } from './exchange/add-item-form/add-item-form.com
     BrowserAnimationsModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

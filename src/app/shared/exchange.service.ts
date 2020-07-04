@@ -4,17 +4,17 @@ import { Subject } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UUID } from 'angular2-uuid';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExchangeService {
-
   private itemLink = 'https://overcds-c873e.firebaseio.com/items.json';
   list: Item[] = [];
   listChanged = new Subject<Item[]>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   addItem(form: NgForm) {
     console.log(form.value.name);
@@ -30,30 +30,29 @@ export class ExchangeService {
       userID,
       false,
       form.value.lastname,
-      typeof form.value.description === 'undefined'
-        ? ''
-        : form.value.description
+      form.value.description
     );
     this.list.push(newItem);
     this.listChanged.next(this.list);
-    return this.http
-      .post(this.itemLink, newItem)
-      .subscribe();
+    this.http.post(this.itemLink, newItem).subscribe(res => console.log(res));
   }
 
   fetchList() {
-    this.http
+   // return this.http.get<ItemInterface[]>(this.itemLink);
+    return this.http
       .get<ItemInterface[]>(this.itemLink)
-      .subscribe((res) => {
-        this.list = res;
-      });
+      .pipe(
+        map((data) => {
+          const keys = Object.keys(data);
+          return keys.map((key) => data[key]);
+        })
+      )
   }
 
   getList() {
     return this.list;
   }
 }
-
 
 export interface ItemInterface {
   name: string;

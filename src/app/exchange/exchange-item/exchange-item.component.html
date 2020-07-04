@@ -1,1 +1,23 @@
-<p>exchange-item works!</p>
+<div class="row">
+  <div class="col-md-4 mt-5 col-xs-12" *ngFor="let item of list;">
+    <mat-card class="example-card" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{item.username}}</mat-card-title>
+        <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{item.image}} style="height: 300px;">
+      <mat-card-content>
+        <p>{{item.description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="button" class="btn btn-warning mr-5 ml-3" [disabled]="item.type === 'Donate' ? true : false" (click)="onReceiveItem(item.id)">Receive this
+          item</button>
+        <button type="button" class="btn btn-success" [disabled]="item.type === 'Donate' ? false : true" (click)="onDonateItem()">Donate this
+          item</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+
+</div>

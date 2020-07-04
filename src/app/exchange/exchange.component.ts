@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemFormComponent } from './add-item-form/add-item-form.component';
+import { ExchangeService } from '../shared/exchange.service';
 
 @Component({
   selector: 'app-exchange',
@@ -10,24 +11,13 @@ import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 export class ExchangeComponent implements OnInit {
   list = [];
 
-
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private exchange: ExchangeService
   ) {}
 
   ngOnInit(): void {
-    // this.http
-    // .get<ItemInterface[]>('https://posmino.firebaseio.com/items.json')
-    // .pipe(
-    //   map((data) => {
-    //     const keys = Object.keys(data);
-    //     return keys.map((key) => data[key]);
-    //   })
-    // )
-    // .subscribe((res) => {
-    //   console.log(res);
-    //   this.list = res;
-    // });
+    this.fetchItems();
   }
 
   openDialog() {
@@ -36,5 +26,10 @@ export class ExchangeComponent implements OnInit {
 
   fetchItems() {
     console.log("log");
+
+    this.exchange.fetchList().subscribe((res) => {
+      console.log(res);
+      this.list = res;
+    });;
   }
 }
