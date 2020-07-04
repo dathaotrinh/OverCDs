@@ -10,26 +10,23 @@ import { ExchangeService } from '../shared/exchange.service';
 })
 export class ExchangeComponent implements OnInit {
   list = [];
+  dialogValue: any;
 
-  constructor(
-    private dialog: MatDialog,
-    private exchange: ExchangeService
-  ) {}
+  constructor(private dialog: MatDialog, private exchange: ExchangeService) {}
 
   ngOnInit(): void {
     this.fetchItems();
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(AddItemFormComponent);
+    const dialogRef = this.dialog.open(AddItemFormComponent, {
+      data: this.list,
+    });
   }
 
   fetchItems() {
-    console.log("log");
-
     this.exchange.fetchList().subscribe((res) => {
-      console.log(res);
       this.list = res;
-    });;
+    });
   }
 }

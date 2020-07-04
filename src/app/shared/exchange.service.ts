@@ -17,7 +17,7 @@ export class ExchangeService {
   constructor(private http: HttpClient) {}
 
   addItem(form: NgForm) {
-    console.log(form.value.name);
+    console.log(form.value);
     const userID = localStorage
       .getItem('key')
       .substring(1, localStorage.getItem('key').length - 1);
@@ -38,7 +38,6 @@ export class ExchangeService {
   }
 
   fetchList() {
-   // return this.http.get<ItemInterface[]>(this.itemLink);
     return this.http
       .get<ItemInterface[]>(this.itemLink)
       .pipe(
@@ -49,9 +48,6 @@ export class ExchangeService {
       )
   }
 
-  getList() {
-    return this.list;
-  }
 }
 
 export interface ItemInterface {

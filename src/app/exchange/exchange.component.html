@@ -2,9 +2,13 @@
   <img class="img-fluid" src="../../assets/images/exchange.jpg">
 </div>
 <div class="div p-5 mx-auto">
-  <img class="text-right" src="https://img.icons8.com/windows/26/000000/refresh.png" (click)='fetchItems()' style="cursor: pointer;">
+  <div class="text-right mr-4 mb-4">
+    <button type="button" class="btn btn-outline-danger" (click)='openDialog()'>Add An Item</button>
+  </div>
 
-  <button type="button" class="btn btn-outline-danger" (click)='openDialog()'>Add An Item</button>
+  <div class="text-right  mr-4">
+    <img src="https://img.icons8.com/windows/26/000000/refresh.png" (click)='fetchItems()' style="cursor: pointer;">
+  </div>
+
   <app-exchange-item [list]="list"></app-exchange-item>
-
 </div>

@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ExchangeService } from 'src/app/shared/exchange.service';
 import { NgForm } from '@angular/forms';
-import { UUID } from 'angular2-uuid';
-import { Item } from 'src/app/shared/item.model';
-import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-item-form',
@@ -13,18 +11,29 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class AddItemFormComponent implements OnInit {
   isAuthenticated = false;
-  constructor(private exchange: ExchangeService, private auth: AuthService) {}
+  constructor(
+  //  @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialog: MatDialog,
+
+    private exchange: ExchangeService, private auth: AuthService) {}
 
   ngOnInit(): void {
-    this.isAuthenticated = typeof localStorage
-    .getItem('key') !== 'undefined' ? true : false;
+    this.isAuthenticated =
+      typeof localStorage.getItem('key') !== 'undefined' ? true : false;
   }
 
   onSubmitSignup(form: NgForm) {
     this.exchange.addItem(form);
   }
 
-  fetchItems() {
-    this.exchange.fetchList().subscribe(res => this.exchange.listChanged.next(res));
+  // fetchItems() {
+  //   this.exchange.fetchList().subscribe((res) => {
+  //     this.data = res
+  //     this.exchange.listChanged.next(res);
+  //   });
+  // }
+
+  onClose() {
+    this.dialog.closeAll();
   }
 }
