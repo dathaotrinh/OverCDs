@@ -16,7 +16,7 @@ export class AuthService {
   private signupLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
   private loginLink = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
   private link = 'https://overcds-c873e.firebaseio.com/users/';
-  
+
   constructor(private http: HttpClient) { }
 
   signupNewUser(email: string, password: string) {
@@ -31,7 +31,7 @@ export class AuthService {
         this.user.next(user);
       })
     )
-    
+
   }
 
   loginUser(email: string, password: string) {
@@ -55,4 +55,5 @@ export class AuthService {
   fetchUserData(id: string) {
     return this.http.get(this.link + id + '.json');
   }
+
 }

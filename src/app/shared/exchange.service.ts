@@ -34,20 +34,33 @@ export class ExchangeService {
     );
     this.list.push(newItem);
     this.listChanged.next(this.list);
-    this.http.post(this.itemLink, newItem).subscribe(res => console.log(res));
+    this.http.post(this.itemLink, newItem).subscribe((res) => console.log(res));
   }
 
   fetchList() {
-    return this.http
-      .get<ItemInterface[]>(this.itemLink)
-      .pipe(
-        map((data) => {
-          const keys = Object.keys(data);
-          return keys.map((key) => data[key]);
-        })
-      )
+    return this.http.get<ItemInterface[]>(this.itemLink).pipe(
+      map((data) => {
+        const keys = Object.keys(data);
+        return keys.map((key) => data[key]);
+      })
+    );
   }
 
+  deleteItem(id: string) {
+    this.http.get<ItemInterface[]>(this.itemLink).subscribe((data) => {
+      console.log(data);
+      const keys = Object.keys(data);
+      keys.forEach((key) => {
+        if (data[key]['id'] === id) {
+          this.http
+            .delete(
+              'https://overcds-c873e.firebaseio.com/items/' + key + '.json'
+            )
+            .subscribe();
+        }
+      });
+    });
+  }
 }
 
 export interface ItemInterface {

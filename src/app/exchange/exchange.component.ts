@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemFormComponent } from './add-item-form/add-item-form.component';
 import { ExchangeService } from '../shared/exchange.service';
+import { Item } from '../shared/item.model';
 
 @Component({
   selector: 'app-exchange',
@@ -9,7 +10,7 @@ import { ExchangeService } from '../shared/exchange.service';
   styleUrls: ['./exchange.component.css'],
 })
 export class ExchangeComponent implements OnInit {
-  list = [];
+  list:Item[] = [];
   dialogValue: any;
 
   constructor(private dialog: MatDialog, private exchange: ExchangeService) {}

@@ -13,7 +13,7 @@
       <mat-card-actions>
         <button type="button" class="btn btn-warning mr-5 ml-3" [disabled]="item.type === 'Donate' ? true : false" (click)="onReceiveItem(item.id)">Receive this
           item</button>
-        <button type="button" class="btn btn-success" [disabled]="item.type === 'Donate' ? false : true" (click)="onDonateItem()">Donate this
+        <button type="button" class="btn btn-success" [disabled]="item.type === 'Donate' ? false : true" (click)="onDonateItem(item.id)">Donate this
           item</button>
       </mat-card-actions>
     </mat-card>
