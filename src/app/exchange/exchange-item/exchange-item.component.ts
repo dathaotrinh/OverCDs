@@ -11,6 +11,7 @@ import { ExchangeService } from 'src/app/shared/exchange.service';
 })
 export class ExchangeItemComponent implements OnInit {
   @Input() list: Item[] = [];
+  private backendUrl = "https://overcds-sendingemail.herokuapp.com/";
   constructor(private http: HttpClient, private auth: AuthService, private exchange: ExchangeService) {}
 
   ngOnInit(): void {}
@@ -24,13 +25,13 @@ export class ExchangeItemComponent implements OnInit {
       .substring(1, localStorage.getItem('key').length - 1);
     this.auth.fetchUserData(contributor).subscribe((res) => {
       this.http
-        .post('http://localhost:8080/sendThankyouEmail', res['email'])
+        .post(this.backendUrl + 'sendThankyouEmail', res['email'])
         .subscribe();
     });
 
     this.auth.fetchUserData(donee).subscribe((res) => {
       this.http
-        .post('http://localhost:8080/sendConfirmEmail', res['email'])
+        .post(this.backendUrl + 'sendConfirmEmail', res['email'])
         .subscribe();
     });
 

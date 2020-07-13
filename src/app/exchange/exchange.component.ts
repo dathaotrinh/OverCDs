@@ -11,7 +11,7 @@ import { Item } from '../shared/item.model';
 })
 export class ExchangeComponent implements OnInit {
   list:Item[] = [];
-  dialogValue: any;
+  // dialogValue: any;
 
   constructor(private dialog: MatDialog, private exchange: ExchangeService) {}
 
