@@ -16,7 +16,7 @@ An online shopping store that was built with Angular framework.
 - Utilized Firebase Authentication to create, manage and verify users
 - Used JavaMail API provided by Spring Boot to engage with the users
 
-## Login
+## Sign-up and Log-in
 
 * Users are required to input their information including first - last name, 
 date of birth, phone number, email address...
@@ -26,9 +26,12 @@ date of birth, phone number, email address...
 [![OVERCDS Login](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSSignupLogin.gif)](https://www.youtube.com/watch?v=0r4EhKT0CuA)
 
 
-## Running unit tests
+## Products Pagination 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Each page contains 50 products
+- Each product is assigned an Unique-ID (16 characters)
+
+![OVERCDS Products](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSProducts.gif)
 
 ## Running end-to-end tests
 
