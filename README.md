@@ -7,7 +7,7 @@ An online shopping store that was built with Angular framework.
 
 ## Main Page
 
-![overcds](https://github.com/jtrinh21/OverCDs/blob/master/FrontPageOverCDS.gif)
+![OVERCDS](https://github.com/jtrinh21/OverCDs/blob/master/FrontPageOverCDS.gif)
 
 
 ## Features
@@ -18,7 +18,13 @@ An online shopping store that was built with Angular framework.
 
 ## Login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Users are required to input their information including first - last name, 
+date of birth, phone number, email address...
+* These information will be stored  and manipulated using the Firebase Authentication.
+
+
+![OVERCDS Login](https://www.youtube.com/watch?v=0r4EhKT0CuA)
+
 
 ## Running unit tests
 
