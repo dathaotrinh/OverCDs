@@ -1,16 +1,18 @@
-# Overcds
+# OVERCDS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+An online shopping store that was built with Angular framework.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Single-page web application to deliver fast user experience
+- Utilized Firebase Authentication to create, manage and verify users
+- Used JavaMail API provided by Spring Boot to engage with the users
+
+## Login
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
