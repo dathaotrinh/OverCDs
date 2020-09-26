@@ -37,6 +37,15 @@ date of birth, phone number, email address...
 
 ![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSSearch.gif)
 
+## Add Products to Shopping Cart
+
+- Multiple ways to add products
+  - Click on Add To Cart button
+  - Direct to a specific product's page and select the quantity of the product you want to add
+  - Automatically calculate the total of money of the product added
+  
+  
+[![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSAddProducts.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
 
 ## Further help
 
