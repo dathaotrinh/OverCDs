@@ -3,8 +3,9 @@
 
 ## Overview
 
-
 An online shopping store that was built with Angular framework.
+![overcds](https://github.com/jtrinh21/OverCDs/blob/master/FrontPageOverCDS.gif)
+
 
 ## Features
 
