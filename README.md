@@ -23,7 +23,7 @@ date of birth, phone number, email address...
 * These information will be stored  and manipulated using the Firebase Authentication.
 
 
-![OVERCDS Login](https://www.youtube.com/watch?v=0r4EhKT0CuA)
+[![OVERCDS Login](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSSignupLogin.gif)](https://www.youtube.com/watch?v=0r4EhKT0CuA)
 
 
 ## Running unit tests
