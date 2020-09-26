@@ -31,7 +31,7 @@ date of birth, phone number, email address...
 - Each page contains 50 products
 - Each product is assigned an Unique-ID (16 characters)
 
-![OVERCDS Products](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSProducts.gif)
+![OVERCDS Products](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSProduct.gif)
 
 ## Running end-to-end tests
 
