@@ -31,11 +31,12 @@ date of birth, phone number, email address...
 - Each page contains 50 products
 - Each product is assigned an Unique-ID (16 characters)
 
-![OVERCDS Products](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSProduct.gif)
+[![OVERCDS Products](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSProduct.gif)](https://www.youtube.com/watch?v=cHWh4Kb5WGE)
 
-## Running end-to-end tests
+## Search Products
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSSearch.gif)
+
 
 ## Further help
 
