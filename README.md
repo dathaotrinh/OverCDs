@@ -42,11 +42,16 @@ date of birth, phone number, email address...
 - Multiple ways to add products
   - Click on Add To Cart button
   - Direct to a specific product's page and select the quantity of the product you want to add
-  - Automatically calculate the total of money of the product added
+- Automatically calculate the total of money of the product added
   
   
 [![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSAddProducts.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
 
-## Further help
+## Exchange Service
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Reduced unsused vinyl records by donating to others
+- Allowed users to request vinyl records they like
+- Sent Thank You Note to both donor and donee
+
+[![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSResult.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
+
