@@ -42,16 +42,16 @@ date of birth, phone number, email address...
 - Multiple ways to add products
   - Click on Add To Cart button
   - Direct to a specific product's page and select the quantity of the product you want to add
-- Automatically calculate the total of money of the product added
-  
+- Automatically calculate the total of money of the products added
+- All of the products added into the cart will be saved until check out/deleted
   
 [![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSAddProducts.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
 
 ## Exchange Service
 
-- Reduced unsused vinyl records by donating to others
-- Allowed users to request vinyl records they like
-- Sent Thank You Note to both donor and donee
+- Reduce unsused vinyl records by donating to others
+- Allow users to request vinyl records they like
+- Send Thank You Note to both donor and donee
 
 [![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSResult.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
 
