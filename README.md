@@ -53,5 +53,5 @@ date of birth, phone number, email address...
 - Allow users to request vinyl records they like
 - Send Thank You Note to both donor and donee
 
-[![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSResult.gif)](https://www.youtube.com/watch?v=Ieg6yzTduVI)
+[![OVERCDS Search](https://github.com/jtrinh21/OverCDs/blob/master/OVERCDSResult.gif)](https://www.youtube.com/watch?v=r8iYhoRwufI)
 
