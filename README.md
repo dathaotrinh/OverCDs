@@ -1,7 +1,7 @@
 # OVERCDS
 
 
-## Overview
+## Overview (click on gifs to direct to videos)
 
 An online shopping store that was built with Angular framework.
 
