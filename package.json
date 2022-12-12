@@ -32,7 +32,7 @@
     "@types/uuid": "^8.0.0",
     "angular2-uuid": "^1.1.1",
     "bootstrap": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "ng2-search-filter": "^0.5.1",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
