@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "overcds"
+  "defaultProject": "overcds",
+  "cli": {
+    "analytics": false
+  }
 }
